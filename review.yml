@@ -1,0 +1,567 @@
+aid: nsw-land-registry
+name: NSW Land Registry Services
+review:
+  question: >-
+    Does NSW Land Registry Services publish a public, documented API, what is its
+    RESO posture, and what must a developer sign or join to reach the NSW Torrens
+    Title Register?
+  answer: false
+  answerQualifier: >-
+    No developer programme, no developer portal and no OpenAPI exist anywhere in the
+    NSW LRS estate. Three real machine-readable surfaces were nonetheless found and
+    verified live and anonymous — a IIIF Image API 2.0 Level 2 endpoint, an
+    Elasticsearch search proxy over 7,160,622 historical documents, and a
+    downloadable W3C XSD for the NSW ePlan LandXML vocabulary — none of which NSW
+    LRS documents or offers to developers, and all of which sit under a licence that
+    forbids exactly the use their reachability invites.
+  date: '2026-07-26'
+  reviewer: API Evangelist
+  homeMarket: Australia
+  tier: land-registry-govt
+
+sectorPosture:
+  homeMarket: Australia
+  resoPosture: >-
+    No RESO reference found. NSW Land Registry Services is not RESO-certified, is not
+    a RESO member, and RESO does not appear anywhere in its estate. Positive-list
+    evidence: RESO's full published certified-organizations list at
+    https://www.reso.org/certificates/ (HTTP 200, 416,233 bytes, fetched 2026-07-26)
+    contains zero occurrences of "Austral" in any form and no NSW Land Registry
+    Services entry. RESO's own Certification and MLS Map page at
+    https://www.reso.org/certification/ (HTTP 200, fetched 2026-07-26, data updated
+    07/24/2026) frames the standard's geography as "489 functioning MLS systems in
+    the United States, more than 30 in Canada and a small but increasing number in
+    Central America, South America, Europe and West Asia" — Australia is not named.
+    RESO publishes a dedicated Canadian Membership page
+    (https://www.reso.org/canadian-membership/, HTTP 200) and no Australian
+    equivalent. Negative-list evidence from the NSW LRS side: every NSW LRS page
+    harvested on 2026-07-26 (home, services, record searches, Torrens register, data
+    solutions, digital plans, terms and conditions, copyright, subscriber compliance)
+    was scanned for the strings RESO, OData, Data Dictionary, $metadata, Universal
+    Property Identifier and UPI; the only hits were the substring "reso" inside
+    "resources" and "_stopResolving", i.e. no genuine matches. Direct OData probes all
+    failed: https://www.nswlrs.com.au/$metadata returned HTTP 404,
+    https://api.nswlrs.com.au/$metadata returned HTTP 403 with
+    {"message":"Forbidden"} from AWS API Gateway, and
+    https://api.lrsnative.com.au/$metadata returned HTTP 400 with an XML
+    NotFound:404 envelope. No Universal Property Identifier is used; NSW keys land on
+    the Torrens folio identifier derived from lot and plan number (for example "1/12345"
+    for Lot 1 in Deposited Plan 12345), documented at
+    https://nswlrs.com.au/services/record-searches/about-the-torrens-title-register.
+    The absence is structurally expected: RESO is a NAR-driven North American MLS
+    construct, Australia has no MLS at all — residential listings are controlled by
+    the REA Group / Domain portal duopoly — and NSW LRS is a statutory land registry
+    operator, not a listings body. NSW LRS's real machine-readable vocabulary is
+    LandXML 1.2 constrained by the ICSM ePlan Cadastral Information File schema, not
+    the RESO Data Dictionary.
+  resoCertified: false
+  resoCertificationType: none
+  resoDataDictionaryVersion: null
+  resoWebApiCertified: false
+  resoDirectoryEvidence: >-
+    https://www.reso.org/certificates/ (HTTP 200, 2026-07-26) — complete RESO
+    certification status listing across Data Providers, MLS, Pooled Platform,
+    Technology Company and Commercial Brokerage sections; zero Australian entries and
+    no NSW Land Registry Services entry. https://www.reso.org/certification/ (HTTP
+    200, 2026-07-26) — RESO Certification and MLS Map, no Australian coverage
+    claimed. https://www.reso.org/canadian-membership/ (HTTP 200, 2026-07-26) — the
+    only non-US national membership roster RESO publishes, and Australia has no
+    counterpart page. https://www.reso.org/reso-certified-organizations/ and
+    https://www.reso.org/members/ both returned HTTP 404 and were not relied on.
+  accessGate: broker-or-agent-only
+  accessGateDetail: >-
+    A developer cannot obtain NSW Torrens Title Register data from NSW LRS directly.
+    The controlling statement is published verbatim at
+    https://nswlrs.com.au/services/record-searches/how-to-find-an-information-broker
+    (HTTP 200, fetched 2026-07-26): "Information brokers deliver and on-sell land
+    titling and related property information through an official licence agreement
+    with NSW LRS. ... Only an information broker we've authorised can access our
+    records." The same page states "NSW LRS strives to create a competitive broker
+    market and invite interested parties to apply to become a broker at any time" —
+    and the "apply to become a broker" link resolves not to an application form,
+    eligibility criteria, technical requirements or fee schedule but to the generic
+    contact page https://nswlrs.com.au/about-us/contact-us. There is no published
+    broker application process, no accreditation checklist and no technical
+    onboarding documentation of any kind. The
+    /services/record-searches/about-the-torrens-title-register page adds: "Paid
+    searches of ITS are available via NSW LRS authorised Information Brokers."
+    The authorised broker and reseller network named on the NSW LRS site as of
+    2026-07-26 includes InfoTrack / InfoTrackGO, Dye & Durham and Dye & Durham
+    Terrain, Equifax, CITEC Confirm, TriSearch, Hazlett, LegalStream, Landchecker,
+    Fynd, PSI Global, Directinfo, Australian Land Title Search, CheckThatProperty,
+    Citylegal, InformationBrokers.com.au, Landtitles.com.au, Title Check and
+    Trustdeed.com, with a published single-transaction price table (last updated 1
+    April 2026) ranging from AUD 19.49 to AUD 98.00 for a title search. That price
+    spread over one identical statutory record is the clearest measure of the broker
+    layer's rent.
+    A second, separate gate governs writes. Lodging a dealing under the Real Property
+    Act 1900 (NSW) requires registering as a subscriber with an Electronic Lodgment
+    Network Operator — PEXA (https://www.pexa.com.au/) or Sympli
+    (https://www.sympli.com.au/) — and complying with the participation rules the
+    Registrar General issues under the Electronic Conveyancing National Law, an
+    appendix to the Electronic Conveyancing (Adoption of National Law) Act 2012.
+    Subscribers must be conveyancers, lawyers, councils or banks, must keep verification
+    of identity and client authorisation records for seven years, and are subject to
+    compliance examinations by NSW LRS under delegated section 33 ECNL authority;
+    failure to comply can mean suspension or termination from the Electronic Lodgment
+    Network (https://nswlrs.com.au/services/land-property-transactions/subscriber-compliance-program,
+    HTTP 200). Plan lodgment now runs exclusively through LRS Connect, an OutSystems
+    application at https://connect.nswlrs.com.au/ (HTTP 200, login-gated), with
+    Mandate 1 from 1 July 2025 requiring 100% of plans to be lodged online.
+    A third gate covers the wholesale data products. Property Alerts, Lease
+    Notifications, Mortgage Insights and Mortgage Verifications
+    (https://nswlrs.com.au/data-solutions and its four child pages, all HTTP 200) are
+    sold by commercial contact only: "For wholesale commercial enquiries, contact us
+    at datasolutions@nswlrs.com.au", and for small users "Property Alerts will be
+    available by the end of 2026 and enquiries should be made directly to your
+    preferred NSW Information Broker". No self-serve signup, no pricing, no technical
+    contract, no delivery-format documentation and no schema are published for any of
+    the four.
+    The only surface a developer can touch without signing anything is the Historical
+    Land Records Viewer, and even there the click-through terms are a licence, not a
+    permission — see the openData block below.
+  developerPortal: none
+  developerPortalDetail: >-
+    No developer portal exists. DNS lookups on 2026-07-26 returned NXDOMAIN for
+    developer.nswlrs.com.au, developers.nswlrs.com.au, docs.nswlrs.com.au,
+    portal.nswlrs.com.au, data.nswlrs.com.au, ws.nswlrs.com.au and
+    its.nswlrs.com.au, and for lrsnative.com.au, www.lrsnative.com.au and
+    portal.lrsnative.com.au. On www.nswlrs.com.au the paths /developers, /api,
+    /docs, /api-docs, /api/v1, /openapi.json, /swagger.json and /$metadata all
+    returned HTTP 404. The full sitemap at https://nswlrs.com.au/sitemap.xml (HTTP
+    200, 104 URLs) contains no developer, API, integration or data-feed page.
+    robots.txt (HTTP 200) is "User-agent: * / Allow: /" with a single sitemap
+    reference and no hidden developer area. The one host that does resolve is
+    api.nswlrs.com.au (A records 3.105.240.228, 3.105.154.90, 13.237.139.81), an AWS
+    API Gateway that returns HTTP 403 {"message":"Forbidden"} with headers
+    x-amzn-errortype: ForbiddenException and x-amz-apigw-id on every path probed —
+    /, /v1, /health, /docs, /openapi.json, /swagger.json, /swagger-ui.html,
+    /api-docs, /$metadata and /.well-known/openid-configuration. A real API estate
+    plainly exists behind that gateway; nothing about it is published. The only
+    first-party HTTP API the public site itself uses is
+    https://nswlrs.com.au/api/v1/contact-us, a Next.js form handler that returned
+    HTTP 404 to GET and HTTP 400 to an empty POST with
+    {"error":"An unexpected error occurred whilst trying to submit the form"} — a
+    website contact form, not a product API.
+  openData: false
+  openDataDetail: >-
+    No open, unlicensed, publicly callable NSW LRS dataset exists, and the gap
+    between reachability and licence is the central finding for this organization.
+    NSW LRS is not a publishing organization on the NSW open-data portal: CKAN
+    queries against https://data.nsw.gov.au/data/api/3/action/package_search on
+    2026-07-26 returned count 0 for organization:nsw-land-registry-services, count 0
+    for "NSW LRS" and count 0 for nswlrs, and organization_list (243 organizations)
+    contains no land-registry entry. Searching the portal for "Land Registry
+    Services" returns only NSW Land Parcel and Property Theme layers published by
+    Spatial Services (DCS), a separate NSW Government agency — those are the
+    Australian counterweight to registry privatisation, and they are not NSW LRS's.
+    NSW LRS does provide genuinely free services, but free is not open. The Online
+    Portal at https://online.nswlrs.com.au/ (HTTP 200, IBM WebSphere Portal, branded
+    "Spatial Information Exchange") offers free web-form searches — street address
+    inquiry, reverse street address inquiry, Water Access Licence inquiry, document
+    inquiry, plan inquiry, deed name and number search, and land value search for
+    owners — with the page itself directing users to "our network of authorised
+    Information Brokers" for anything more comprehensive. These are HTML forms behind
+    a portal session; no API, no bulk download, no licence grant, no machine-readable
+    output. The Historical Land Records Viewer at https://hlrv.nswlrs.com.au/ (HTTP
+    200) is free and needs no account, but access is governed by a click-through
+    licence whose text was extracted verbatim from the application bundle on
+    2026-07-26 and which prohibits precisely the programmatic use its open backend
+    permits. Clause 2.1: "Unless otherwise agreed in writing by NSW LRS, you are
+    prohibited from: (a) on-selling, or on-supplying, or sub-licensing products in
+    any form to any other person or entity; or (b) altering the format, meaning or
+    substance of any products supplied; or (c) making copies of the products other
+    than as are reasonably required for backup purposes; or (d) rebroadcasting,
+    reformatting, making available online or reconstructing products or part thereof;
+    or (e) otherwise publishing, blending or dealing with the products, or (f) data
+    aggregating, data matching, marketing, compilation of mailing lists, list
+    brokering or any related purpose". Clause 3.6: "You agree that you will not use
+    any device, software or routine to abuse the service of HLRV or emulate human
+    interaction and operation." Clause 3.10: "You agree that NSW LRS may set an upper
+    limit on the number of products (or volumes of products) you may request or
+    access via HLRV." Clause 6.2 vests all IP in "NSW LRS, the State of New South
+    Wales or other third parties". Clause 1.2(b) makes mere access acceptance. There
+    is no Creative Commons licence, no Open Government Licence, no attribution
+    statement and no reuse grant anywhere in the NSW LRS estate. Compare HM Land
+    Registry, which serves Price Paid Data anonymously under Open Government Licence
+    v3.0: NSW has no equivalent, and the public record reaches the market only as a
+    priced, licensed product.
+  authModel: >-
+    No developer authentication model is published, and three distinct real schemes
+    were observed. First, api.nswlrs.com.au is AWS API Gateway and answers every
+    anonymous request with HTTP 403 ForbiddenException — the signature of a missing
+    or invalid API key / authorizer token on a private gateway. No key issuance page,
+    no scheme documentation and no scopes exist. Second, LRS Connect at
+    https://connect.nswlrs.com.au/ is an OutSystems React application; its
+    unauthenticated manifest at /moduleservices/moduleinfo returned HTTP 200 with a
+    258,969-byte JSON module listing covering 440 versioned assets under a single
+    "Connect" module, but /rest, /rest/, /Connect/rest/, /api, /screenservices and
+    /ConnectAPI/rest/ all returned HTTP 404, so no OutSystems REST module is exposed;
+    authentication is an ordinary subscriber login. Third, the HLRV single-page app
+    carries an x-portal-token JWT verified client-side against an RSA public key
+    embedded in the bundle, used to unlock restricted collection IDs — but the token
+    is not enforced server-side on /hlrv/documents/_msearch, which answered HTTP 200
+    with no token supplied. No OpenID Connect discovery document is served anywhere:
+    https://nswlrs.com.au/.well-known/openid-configuration returned HTTP 404,
+    https://connect.nswlrs.com.au/.well-known/openid-configuration HTTP 404,
+    https://online.nswlrs.com.au/.well-known/openid-configuration HTTP 404,
+    https://hlrv.nswlrs.com.au/.well-known/openid-configuration HTTP 403 and
+    https://api.lrsnative.com.au/.well-known/openid-configuration HTTP 400. No SAML
+    metadata was found. No security.txt is served:
+    https://nswlrs.com.au/.well-known/security.txt returned HTTP 404 and
+    https://api.lrsnative.com.au/.well-known/security.txt returned HTTP 400.
+  webhooksEventsSdksPostman: >-
+    None published, and the absence is the finding — which is notable because NSW LRS
+    sells an event product. Property Alerts is described on
+    https://nswlrs.com.au/data-solutions/property-alerts as "Automatically alerting
+    you to record changes or search activity related to your selected titles,
+    properties, mortgages and commercial leases ... in near real-time", with claims
+    of "early warning up to 28 days of refinance and property sale activity prior to
+    the PEXA workspace — the earliest warning available in the market". Lease
+    Notifications likewise promises continuous monitoring and notification "at your
+    preferred frequency". Neither page publishes a delivery mechanism, a payload
+    schema, an endpoint, a subscription API, an AsyncAPI document or even a stated
+    transport; the entire technical contract is an email address,
+    datasolutions@nswlrs.com.au. No SDK, client library or CLI is published. No
+    GitHub organization exists — a GitHub repository search for "nswlrs" returned
+    total_count 0 on 2026-07-26. No Postman workspace or collection was found. No
+    changelog for any API exists; the closest artifact is the LRS Connect release
+    schedule at
+    https://nswlrs.com.au/about-us/education-hub/lrs-connect-release-schedule (HTTP
+    200), a product feature list with a "Data / Integration" heading and no technical
+    detail, whose feedback channel is connect@nswlrs.com.au and an enhancement
+    request form. A real status page does exist at https://status.nswlrs.com.au/
+    (HTTP 200) with email and SMS incident subscriptions, covering NSW Online Portal
+    Services, Information Broker Services, NSW LRS Websites, NSW LRS Connect and
+    ELNO.
+  machineReadableContracts: >-
+    Three genuine machine-readable contracts were located, two of which were
+    harvested verbatim into openapi/. (1) The IIIF Image API 2.0 image information
+    document for the Historical Land Records Viewer, fetched anonymously HTTP 200
+    from
+    https://api.lrsnative.com.au/hlrv/iiif/2/eirOSD%2F0938-0939%2F0939_0937_0001.jp2/info.json
+    on 2026-07-26 and saved as
+    openapi/nsw-land-registry-hlrv-iiif-image-information.json — a self-describing
+    IIIF Level 2 service contract, valid JSON, 939 bytes. (2) The ICSM ePlan
+    Cadastral Information File enumerated types schema, fetched anonymously HTTP 200
+    with Content-Type text/xml from
+    https://nswlrs.com.au/assets/f/1129775276948026/x/7d398c2b5a/xml-gov-au-nsw-icsm-eplan-cif-enumerated-types-4-0.xsd
+    on 2026-07-26 and saved as
+    openapi/nsw-land-registry-eplan-cif-enumerated-types-4-0.xsd — a valid W3C XML
+    Schema, 49,749 bytes, targetNamespace
+    urn:xml-gov-au:nsw:icsm:eplan:cif:enumerated-types:4.0, version 4.0, containing
+    44 xs:simpleType definitions that pin the NSW jurisdictional value sets for
+    LandXML 1.2 including parcelClass, parcelFormat, monumentType, monumentState,
+    monumentCondition, observationType, surveyFormatType, surveyStatusType,
+    purpSurvType, registrationType, roadTypeType, adminAreaTypeType, jurisdictionType
+    and documentStatusType. This is the contract behind the digital plan mandate:
+    from 1 July 2026 all Deposited and Community plans surveyed on or after that date
+    must include a LandXML digital plan file alongside the PDF, carrying new lots,
+    new roads, survey connections, control marks and connections, reference marks and
+    boundary marks
+    (https://nswlrs.com.au/services/plans/digital-plans, HTTP 200). (3) Supporting
+    but non-schema artifacts published openly alongside it include
+    digital_plan_file_validation_rules_for_surveyors.pdf, landxml-validation_03032026.pdf,
+    nsw_landxml_recipe-v10-aug-2024.docx and stage-1 / stage-2 LandXML requirements
+    visual guides. No OpenAPI, Swagger, AsyncAPI, GraphQL SDL, WSDL, OData
+    $metadata, RESO Data Dictionary or JSON Schema document exists anywhere in the
+    NSW LRS estate.
+  corporateStructure: >-
+    NSW LRS is a privatised operator of a public register. The privacy notice
+    published on nswlrs.com.au identifies the operating entity as "Australian
+    Registry Investments Pty Ltd (ACN 617 926 020) as trustee for the Australian
+    Registry Investments Trust (trading as NSW Land Registry Services)". The
+    regulator page at https://nswlrs.com.au/about-us/our-regulator-commitments (HTTP
+    200) states: "As of 1 July 2017, NSW LRS maintain the Torrens Register on behalf
+    of the Registrar General under a concession granted to them by the NSW
+    government", with the Office of the Registrar General managing that concession
+    "through a range of oversights, rules and directions". NSW LRS is a founding
+    member of Australian Land Registry Operators (ALRO, https://auslro.com.au/, HTTP
+    200), "a collective of the five privately operated land registries and service
+    providers across Australia" alongside Secure Electronic Registries Victoria
+    (SERV), Titles Queensland, Land Services SA and Land Services WA, which ALRO says
+    "represent 95% of the nation's land registry data and support more than $10
+    trillion in residential property by value". Four of Australia's five largest
+    state land registries are now privately operated and collectively marketing
+    national property data products — the structural context for every access gate
+    recorded above.
+  valueChainPosition: >-
+    Beneath everything. NSW LRS keeps the Torrens Title Register under the Real
+    Property Act 1900 (NSW), the General Register of Deeds (Old System, from 1825),
+    the Central Register of Restrictions, the water access licence register and the
+    plan registers, and it is the single source of truth on which the Australian
+    residential and commercial property market settles. Above it sit the ELNOs — PEXA
+    and Sympli — through which every Real Property Act dealing must now be lodged
+    electronically, making eConveyancing the closest thing in this study to a
+    mandated national machine-readable property rail; above them the information
+    broker layer that resells searches; above that the valuation layer of PropTrack
+    (REA-owned) and CoreLogic; and at the consumer end the realestate.com.au and
+    Domain duopoly. NSW LRS captures none of the portal economics and all of the
+    statutory obligation, and it monetises by licensing the record downward into the
+    broker channel and sideways into wholesale data products aimed at banks, credit
+    providers, insurers, regulators, developers, investors and PropTech businesses.
+
+probes:
+- url: https://nswlrs.com.au/
+  status: 200
+  note: >-
+    Next.js App Router site; returns HTTP 404 to a default curl user agent and HTTP
+    200 with a browser user agent. Content is delivered as RSC flight payloads, not
+    server-rendered HTML text.
+  date: '2026-07-26'
+- url: https://www.nswlrs.com.au/robots.txt
+  status: 200
+  note: 'User-agent: * / Allow: / with one sitemap reference.'
+  date: '2026-07-26'
+- url: https://nswlrs.com.au/sitemap.xml
+  status: 200
+  note: 104 URLs; no developer, API or data-feed page.
+  date: '2026-07-26'
+- url: https://api.nswlrs.com.au/
+  status: 403
+  note: >-
+    AWS API Gateway. {"message":"Forbidden"} with x-amzn-errortype:
+    ForbiddenException and x-amz-apigw-id. Identical 403 on /v1, /health, /docs,
+    /openapi.json, /swagger.json, /swagger-ui.html, /api-docs, /$metadata and
+    /.well-known/openid-configuration. A private API estate exists; nothing is
+    published about it.
+  date: '2026-07-26'
+- url: https://nswlrs.com.au/api/v1/contact-us
+  status: 400
+  note: >-
+    HTTP 404 to GET, HTTP 400 to empty POST with {"error":"An unexpected error
+    occurred whilst trying to submit the form"}. Website contact form handler.
+  date: '2026-07-26'
+- url: https://hlrv.nswlrs.com.au/
+  status: 200
+  note: >-
+    Historical Land Records Viewer, a React SPA. No login required. Terms and
+    conditions modal on entry; access is deemed acceptance.
+  date: '2026-07-26'
+- url: https://api.lrsnative.com.au/hlrv/iiif/2/
+  status: 200
+  note: >-
+    Cantaloupe Image Server, IIIF Image API 2.x endpoint documentation page,
+    advertising /{identifier}/info.json and /{identifier}/full/full/0/default.jpg.
+  date: '2026-07-26'
+- url: https://api.lrsnative.com.au/hlrv/iiif/2/eirOSD%2F0938-0939%2F0939_0937_0001.jp2/info.json
+  status: 200
+  note: >-
+    Valid IIIF Image API 2.0 image information document, Content-Type
+    application/json, 939 bytes, profile http://iiif.io/api/image/2/level2.json.
+    Harvested verbatim to openapi/nsw-land-registry-hlrv-iiif-image-information.json.
+  date: '2026-07-26'
+- url: https://api.lrsnative.com.au/hlrv/iiif/2/eirOSD%2F0938-0939%2F0939_0937_0001.jp2/full/200,/0/default.jpg
+  status: 200
+  note: Content-Type image/jpeg, 16,798 bytes. Real scanned NSW land record rendered anonymously.
+  date: '2026-07-26'
+- url: https://api.lrsnative.com.au/hlrv/documents/_msearch
+  status: 200
+  note: >-
+    POST with ndjson body, no credentials. Content-Type application/json,
+    hits.total 7160622, three shards successful. Returns full document metadata
+    including collectionName, bookAndNumber, scanTimestamp and the JPEG2000 image
+    array. No contract published.
+  date: '2026-07-26'
+- url: https://api.lrsnative.com.au/hlrv/documents
+  status: 503
+  note: 503 Service Temporarily Unavailable (nginx) on GET.
+  date: '2026-07-26'
+- url: https://api.lrsnative.com.au/hlrv/documents/_search
+  status: 400
+  note: '{"message":"Invalid Request: TypeError: query.includes is not a function"}'
+  date: '2026-07-26'
+- url: https://api.lrsnative.com.au/hlrv/lotsearch/search
+  status: 500
+  note: Internal Server Error on POST; 404 "Cannot GET /hlrv/lotsearch/search" on GET.
+  date: '2026-07-26'
+- url: https://nswlrs.com.au/assets/f/1129775276948026/x/7d398c2b5a/xml-gov-au-nsw-icsm-eplan-cif-enumerated-types-4-0.xsd
+  status: 200
+  note: >-
+    Content-Type text/xml, 49,749 bytes. Valid W3C XML Schema, targetNamespace
+    urn:xml-gov-au:nsw:icsm:eplan:cif:enumerated-types:4.0, version 4.0, 44
+    xs:simpleType definitions. Harvested verbatim to
+    openapi/nsw-land-registry-eplan-cif-enumerated-types-4-0.xsd.
+  date: '2026-07-26'
+- url: https://connect.nswlrs.com.au/
+  status: 200
+  note: LRS Connect, an OutSystems React application. Login-gated subscriber portal.
+  date: '2026-07-26'
+- url: https://connect.nswlrs.com.au/moduleservices/moduleinfo
+  status: 200
+  note: >-
+    Unauthenticated OutSystems module manifest, 258,969 bytes JSON, 440 versioned
+    assets under one "Connect" module. No REST module exposed; /rest, /Connect/rest/,
+    /api, /screenservices and /ConnectAPI/rest/ all returned 404. Platform metadata,
+    not an API contract; not harvested.
+  date: '2026-07-26'
+- url: https://online.nswlrs.com.au/
+  status: 200
+  note: >-
+    NSW LRS Online Portal, IBM WebSphere Portal, branded "Spatial Information
+    Exchange". Free web-form searches only; no API.
+  date: '2026-07-26'
+- url: https://status.nswlrs.com.au/
+  status: 200
+  note: >-
+    Real status page with email and SMS incident subscription, covering NSW Online
+    Portal Services, Information Broker Services, NSW LRS Websites, NSW LRS Connect
+    and ELNO.
+  date: '2026-07-26'
+- url: https://nswlrs.com.au/services/record-searches/how-to-find-an-information-broker
+  status: 200
+  note: >-
+    "Only an information broker we've authorised can access our records." Broker and
+    reseller price table last updated 1 April 2026, AUD 19.49 to AUD 98.00 per title
+    search. "apply to become a broker" links to the generic contact page.
+  date: '2026-07-26'
+- url: https://nswlrs.com.au/data-solutions
+  status: 200
+  note: >-
+    Four wholesale products — Property Alerts, Lease Notifications, Mortgage
+    Insights, Mortgage Verifications. Contact datasolutions@nswlrs.com.au. No
+    pricing, no schema, no delivery mechanism, no self-serve path.
+  date: '2026-07-26'
+- url: https://nswlrs.com.au/services/plans/digital-plans
+  status: 200
+  note: >-
+    Mandate 1 (1 July 2025) requires 100% of plans lodged online via LRS Connect;
+    from 1 July 2026 Deposited and Community plans must include a LandXML digital
+    plan file. Links the ePlan CIF XSD and the LandXML validation guides.
+  date: '2026-07-26'
+- url: https://nswlrs.com.au/services/land-property-transactions/subscriber-compliance-program
+  status: 200
+  note: >-
+    ELNO subscriber regime under the Electronic Conveyancing National Law; NSW LRS
+    conducts compliance examinations under delegated section 33 ECNL authority.
+  date: '2026-07-26'
+- url: https://www.reso.org/certificates/
+  status: 200
+  note: >-
+    Full RESO certification status listing, 416,233 bytes. Zero "Austral" matches, no
+    NSW Land Registry Services entry.
+  date: '2026-07-26'
+- url: https://www.reso.org/certification/
+  status: 200
+  note: >-
+    RESO Certification and MLS Map, data updated 07/24/2026. Geography described as
+    US, Canada, Central America, South America, Europe and West Asia. Australia not
+    named.
+  date: '2026-07-26'
+- url: https://data.nsw.gov.au/data/api/3/action/package_search?q=organization:nsw-land-registry-services
+  status: 200
+  note: >-
+    count 0. Also count 0 for "NSW LRS" and for nswlrs. organization_list returns 243
+    organizations, none of which is a land registry. NSW LRS publishes no open data.
+  date: '2026-07-26'
+- url: https://auslro.com.au/
+  status: 200
+  note: >-
+    Australian Land Registry Operators — NSW LRS plus SERV, Titles Queensland, Land
+    Services SA and Land Services WA; "95% of the nation's land registry data".
+  date: '2026-07-26'
+- url: https://api.github.com/search/repositories?q=nswlrs
+  status: 200
+  note: total_count 0. No GitHub presence.
+  date: '2026-07-26'
+
+dnsProbes:
+  resolved:
+  - api.nswlrs.com.au
+  - online.nswlrs.com.au
+  - connect.nswlrs.com.au
+  - hlrv.nswlrs.com.au
+  - status.nswlrs.com.au
+  - api.lrsnative.com.au
+  nxdomain:
+  - developer.nswlrs.com.au
+  - developers.nswlrs.com.au
+  - docs.nswlrs.com.au
+  - portal.nswlrs.com.au
+  - data.nswlrs.com.au
+  - ws.nswlrs.com.au
+  - its.nswlrs.com.au
+  - lrsnative.com.au
+  - www.lrsnative.com.au
+  - portal.lrsnative.com.au
+
+findings:
+  summary: |
+    NSW Land Registry Services publishes no API. It has no developer portal, no
+    developer or docs subdomain, no OpenAPI or Swagger document, no SDK, no CLI, no
+    Postman workspace, no GitHub organization, no webhook catalogue and no published
+    authentication scheme. Access to the Torrens Title Register is licensed, not
+    opened: "Only an information broker we've authorised can access our records",
+    and brokers reach it "through an official licence agreement with NSW LRS".
+    Writes require ELNO subscriber registration with PEXA or Sympli under the
+    Electronic Conveyancing National Law. Wholesale data products are sold by
+    emailing datasolutions@nswlrs.com.au.
+
+    Three real machine-readable surfaces nonetheless exist and answer anonymously,
+    none of which NSW LRS documents. A Cantaloupe IIIF Image API 2.0 Level 2 endpoint
+    serves the scanned historical land records and returns a valid self-describing
+    info.json plus real JPEG derivatives. An Elasticsearch proxy at
+    /hlrv/documents/_msearch answers with 7,160,622 indexed documents and no token.
+    And a valid W3C XSD pinning the NSW ePlan LandXML jurisdictional vocabulary is
+    published as an ordinary site asset. The contract is open and the licence is
+    closed: the HLRV terms prohibit on-supply, republishing, data aggregation and
+    "any device, software or routine to abuse the service of HLRV or emulate human
+    interaction and operation".
+
+    RESO is absent in every direction that can be checked, which is the expected
+    Australian answer. No open data is published; NSW LRS is not an organization on
+    data.nsw.gov.au. A privatised registry, operating a public statutory record under
+    a 2017 concession, selling that record back through a licensed broker channel at
+    AUD 19.49 to AUD 98.00 a search, is the finding — recorded plainly.
+  publicDeveloperSurface: false
+  machineReadableContractsHarvested: 2
+  openApiDocumentsFound: 0
+  gated: true
+
+sources:
+- url: https://nswlrs.com.au/services/record-searches/how-to-find-an-information-broker
+  type: Documentation
+  note: The controlling access statement and the authorised broker/reseller price table.
+- url: https://nswlrs.com.au/services/record-searches/about-the-torrens-title-register
+  type: Documentation
+  note: Torrens register structure, Integrated Titling System, folio identifiers, broker-only ITS searches.
+- url: https://nswlrs.com.au/data-solutions
+  type: Documentation
+  note: Wholesale data products and the datasolutions@nswlrs.com.au commercial channel.
+- url: https://nswlrs.com.au/services/plans/digital-plans
+  type: Documentation
+  note: Digital plan mandates and the LandXML digital plan file requirement.
+- url: https://nswlrs.com.au/services/land-property-transactions/subscriber-compliance-program
+  type: Documentation
+  note: ELNO subscriber regime, ECNL section 33 delegated compliance authority.
+- url: https://nswlrs.com.au/about-us/our-regulator-commitments
+  type: Documentation
+  note: The 1 July 2017 concession and Office of the Registrar General oversight.
+- url: https://hlrv.nswlrs.com.au/
+  type: Documentation
+  note: Historical Land Records Viewer; terms of use extracted verbatim from the application bundle.
+- url: https://www.reso.org/certificates/
+  type: Documentation
+  note: RESO certified-organizations list; no Australian entry.
+- url: https://data.nsw.gov.au/data/api/3/action/package_search
+  type: APIReference
+  note: CKAN queries confirming NSW LRS publishes no open data.
+- url: https://auslro.com.au/
+  type: Documentation
+  note: Australian Land Registry Operators collective.
+
+actions:
+  openapiPath: null
+  harvestedArtifacts:
+  - openapi/nsw-land-registry-hlrv-iiif-image-information.json
+  - openapi/nsw-land-registry-eplan-cif-enumerated-types-4-0.xsd
+  apisYmlUpdated: true
+  reason: >-
+    No OpenAPI, Swagger, AsyncAPI or OData $metadata document exists anywhere in the
+    NSW LRS estate, and none was authored — nothing was invented. Two real
+    machine-readable contracts were harvested verbatim with provenance: the IIIF
+    Image API 2.0 image information document that self-describes the live HLRV image
+    service, and the ICSM ePlan CIF enumerated types XSD that defines the NSW
+    LandXML vocabulary now mandatory for digital plan lodgment. Two APIs are listed
+    in apis.yml, both verified live and anonymous, both explicitly recorded as
+    observed surfaces rather than offered developer products.

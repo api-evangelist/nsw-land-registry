@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by ﻿Admin (NSW Land & Property Information) -->
+<!--
+
+Copyright (c) 2007 
+- Department of Lands, State of New South Wales, Australia
+
+
+Purpose: 
+=======
+This file represents a collection of NSW Jurisdictional values for LandXML 1.2
+enumerated types.
+
+
+Changes: 
+======= Version 1.0
+@author: Tim Telcik <tim.telcik@ajilon.com.au>
+@date: 14-May-2007 @ 8.49 PM (WST)
+
+@author: Tim Telcik <tim.telcik@ajilon.com.au>
+@date: 25-May-2007 @ 3:00 PM (EST)
+@changes: + Updated header.
+
+@author: Tim Telcik <tim.telcik@ajilon.com.au>
+@date: 19-Jun-2007 @ 2:30 PM (WST)
+@changes: + Updated header.
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 19 October 2009 @ 12:30 PM (EST)
+@changes: + Added current enumerations.
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 8 June 2010 @ 12:00 PM (EST)
+@changes: + Added monument enumerations
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 15 october 2010 @ 10:00 AM (EDST)
+@changes: + Added Australian Simple Types Not in LandXML
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 15 November 2010 @ 10:50 AM (EDST)
+@changes: + purposeType enumerations
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 28 January 2011@ 10:50 AM (EDST)
+@changes: + Surveyheader@jurisdiction abreviated state names removed
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 15 february 2011@ 11:00 AM (EDST)
+@changes: + Text case for parcelTypeType changed to capitalfor first letter.
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 15 february 2011@ 2:50 PM (EDST)
+@changes: + corrected mispelling of Multipart enum in parcelTypeType .
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 29 march 2011 2011@ 9:30am (EDST)
+@changes: removed Adminarea enum from parcelTypeType and added "road width" enum to annotation type .
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 8 April 2011 @ 2:00 pm (EST)
+@changes:  added following enumerations useOfParcel= Drainage Reserve, adminDateTypeType = Date of Survey, monumentCondition=inaccessible and submerged, monumentState= New, monumentType= Not Marked and Occupation .
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 3 May 2011 @ 3:00 pm (EST)
+@changes:  added enumeration "GPS" and "GNSS" to horizFixType .
+
+@author: mark Deal <Mark.Deal@lpma.nsw.gov.au>
+@date: 6 Sept 2011 @ 11:00 amm (EST)
+@changes:added MonumentPurpose of "offset boundary" added adminAreaTypeType:enumeration value="Survey Region" added Annotatio@type Capture Quality" which is only for use by LPI when diseminating LXML files
+
+- 10 Oct 2011 added MM and GB (misc mark and Geodetic bench mark) to MonumentType enumerations
+- 26 Oct 2011 changed  text for a number of enumerations  to camel case for consistancy
+- 21Feb 2012 added enumeration "Plans Used" to AnnotationType
+- 20 March 2012 added CR and CP(SCIMS marks = cadastral ref mark and mapping control point) and witness mark to MonumentType enumerations 
+-2 April 2012 added additional horizDatumType attributes to match surveyBgDatumType
+-28 June 2012 added Subdivision Number to AnnotationType
+4 August 2012 added Parce;Class "Railway" updated floorLevelTypeType
+8 August 2012 added annotationType "Diagram"
+28 August 2012 added Monument@state ="OK"
+29 Nov 2012 added lineDescType, added annotationType "Diagram Lots","Diagram Occupations","Diagram Seconday Interests"
+25 March 2013 observationType value of "Compiled" added
+11 april 2013 remove erroneous space after pubic reserve for UseOfParcel enum
+13 May 2013 added AdminAreaType "Terrain"
+6/6/2013 added observationType = "GNSS"
+15 /8 2013 remove erroneous space after Planter,TreeClearing and Yard for UseOf Parcel enums
+4/9/2013 removed some non-relevant MonumentCondition enums
+17/9/2013 commented out MonumentPurpose - not used in ICSM protocol
+23/10/2013 removed unnecessary enumerations from annotationType and added Direction Of Flow Tidal and Direction Of Flow Non Tidal to annotationType
+31/3/2014  Hwan Choi - added "0" to horzOrderType
+17/10/2014 Hwan Choi - added "Reserved Road" to parcelClass
+30/11/2014 Hwan Choi - added "Combined Scale Factor" to annotationType
+01/03/2015 Hwan Choi - added "Unspecified" to monumentState
+01/03/2015 Hwan Choi - added new enum type of distanceAccType for ReducedObservation@distanceAccClass
+01/11/2015 Hwan Choi - added "LPI File Ref" to annotationType
+15/11/2015 Hwan Choi - added "Designated Area" to parcelClass
+01/12/2015 Hwan Choi - added "BM" to monumentType
+01/02/2016 Hwan Choi - removed "Unspecified" from Monument@monumentState enums
+11/02/2016 Hwan Choi - added "Staged Strata Plan" and "Staged Strata Plan Of Subdivision" to PurposeOfSurvey@name enums (purpSurvType)
+09/03/2016 Hwan Choi - removed “Lodgment Date”, “Registration Date” and “Image Date” from AdministrativeDate@adminDateType and added “Date Of Compilation”
+22/03/2016 Hwan Choi - commented out “headOfPowerType”
+08/04/2016 Hwan Choi - enum list for distanceAccType and monumentState have been modified: commented out the enums that are not used
+04/05/2016 Hwan Choi - added "Boardwalk" and "Passage" to RoadName@roadNameType (roadNameTypeType)
+13/10/2016 Hwan Choi - enum list for munumentState have been : commented out enums have been reinstated for backward competibility
+31/03/2017 Hwan Choi - added "LPICalculated" to observationType
+13/09/2017 Hwan Choi - removed "GPS" and replaced with "Policy 3"  horzFixType
+15/09/2017 Hwan Choi - changed Annotation@type = “LPI File Ref” to “LRS File Ref” and observationType of “LPICalculated” to “LRSCalculated”
+============================================================================================================================== Version Change 3.0
+05/04/2018 Hwan Choi - commented out 4 enmerations (Adopted, Existing, New, OK) from the MonumentState
+11/05/2018 Mark Deal - added,  Reference” to purposeType, ReducedObservation/ReducedArcObservation@desc enumeration=”Road Extent”, AdminDateTypes=Date Of Survey Certificate,Date Of Subdivision Certificate,	Date Of Strata Certificate, additional Monument@type values,“HeightMethodType” added with enums,  vertFixType added with enums, Annotation@type=”Scale” , updated monument@conditionType enums
+14/06/2018 Hwan Deal - Added NA to enums for RedVerticalObservation and RedHorizontalPosition@Order
+============================================================================================================================== Version Change 4.0 (proposed)
+26/04/2019 Hwan Choi - Added "Policy 4" and "Policy 5" to enumeration for horzFixType
+04/06/2019 Hwan Choi - Added "Height Difference" to purposeType enumeration for ReducedObservation/ReducedArcObservation@desc attribute.
+04/06/2019 Hwan Choi - Removed "MGA" and replaced it with two new enumerations "MGA94" and "MGA2020" for horzDatumType and surveyBgDatumType
+ -->
+<xs:schema xmlns="urn:xml-gov-au:nsw:icsm:eplan:cif:enumerated-types:4.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:xml-gov-au:nsw:icsm:eplan:cif:enumerated-types:4.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0">
+	<xs:simpleType name="addressPointTypeType">
+		<xs:annotation>
+			<xs:documentation>This is a string to define the type of Geocode that the address point is for example,centroid of parcel, Access Point etc.  This will be a jurisdictionally based list.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Access Point"/>
+			<xs:enumeration value="Centroid of Parcel"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="addressTypeType">
+		<xs:annotation>
+			<xs:documentation>This Type is to define a jurisdictional specific list of address types such a primary address, alias, secondary, historical etc.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Alias"/>
+			<xs:enumeration value="Historical"/>
+			<xs:enumeration value="Primary"/>
+			<xs:enumeration value="Secondary"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="adminAreaTypeType">
+		<xs:annotation>
+			<xs:documentation>This is a jurdictionally specific list of types and may include parish, town, local government, locality etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="County"/>
+			<xs:enumeration value="Locality"/>
+			<xs:enumeration value="Local Government Area"/>
+			<xs:enumeration value="Parish"/>
+			<xs:enumeration value="Survey Region"/>
+			<xs:enumeration value="Terrain"/>
+			<xs:enumeration value="Misclose Accuracy"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="adminDateTypeType">
+		<xs:annotation>
+			<xs:documentation>This is a jurdictionally specific list of date types and may include dates such as Image dates, registraion dates, valuation dates, building approval dates etc  </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Date Of Survey"/>
+			<xs:enumeration value="Date Of Compilation"/>
+			<xs:enumeration value="Date Of Survey Certificate"/>
+			<xs:enumeration value="Date Of Subdivision Certificate"/>
+			<xs:enumeration value="Date Of Strata Certificate"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="annotationType">
+		<xs:annotation>
+			<xs:documentation>An Annotation will be a specific type within a jurisdiction. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Parcel Note"/>
+			<xs:enumeration value="Plan Note"/>
+			<xs:enumeration value="Plans Used"/>
+			<xs:enumeration value="Subdivision Number"/>
+			<xs:enumeration value="Diagram"/>
+			<xs:enumeration value="Diagram Lots"/>
+			<xs:enumeration value="Diagram Occupations"/>
+			<xs:enumeration value="Diagram Secondary Interests"/>
+			<xs:enumeration value="Direction Of Flow Tidal"/>
+			<xs:enumeration value="Direction Of Flow Non Tidal"/>
+			<xs:enumeration value="Combined Scale Factor"/>
+			<xs:enumeration value="LRS File Ref"/>
+			<xs:enumeration value="Scale"/>
+			<!--<xs:enumeration value="AffectedCT"/>-->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="documentStatusType">
+		<xs:annotation>
+			<xs:documentation>This field identifes the legal status for this document, for example it is the leagal record of survey, if was data captured from historical data etc.  This is used to determine processing of the record</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Data captured"/>
+			<xs:enumeration value="Final lodgement"/>
+			<xs:enumeration value="Historical"/>
+			<xs:enumeration value="Preliminary Examination"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="equipmentType">
+		<xs:annotation>
+			<xs:documentation>This is a rough indication of the type of equipment</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GNSS"/>
+			<xs:enumeration value="Scale"/>
+			<xs:enumeration value="Total station"/>
+			<xs:enumeration value="Theodolite"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="exclusType">
+		<xs:annotation>
+			<xs:documentation>This is a jurisdictionally based list of exclusions for a Title example would be exclusions for Road, Track, Esplanarde etc </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Land Designated "/>
+			<xs:enumeration value="Other Lots"/>
+			<xs:enumeration value="River"/>
+			<xs:enumeration value="Road"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="flatTypeType">
+		<xs:annotation>
+			<xs:documentation>To define a Jurisdictional specific list of address living unit types for addressing</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Apartment"/>
+			<xs:enumeration value="Berth"/>
+			<xs:enumeration value="Cottage"/>
+			<xs:enumeration value="Dock"/>
+			<xs:enumeration value="Duplex"/>
+			<xs:enumeration value="Factory"/>
+			<xs:enumeration value="Flat"/>
+			<xs:enumeration value="House"/>
+			<xs:enumeration value="Kiosk"/>
+			<xs:enumeration value="Office"/>
+			<xs:enumeration value="Penthouse"/>
+			<xs:enumeration value="Premises"/>
+			<xs:enumeration value="Room"/>
+			<xs:enumeration value="Shed"/>
+			<xs:enumeration value="Shop"/>
+			<xs:enumeration value="Stall"/>
+			<xs:enumeration value="Studio"/>
+			<xs:enumeration value="Suite"/>
+			<xs:enumeration value="Townhouse"/>
+			<xs:enumeration value="Unit"/>
+			<xs:enumeration value="Villa"/>
+			<xs:enumeration value="Ward"/>
+			<xs:enumeration value="Warehouse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="floorLevelTypeType">
+		<xs:annotation>
+			<xs:documentation>To define a jurisdictionally specific list of floo level types for example, Lower Ground Floor</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Basement"/>
+			<xs:enumeration value="Floor"/>
+			<xs:enumeration value="Ground"/>
+			<xs:enumeration value="Level"/>
+			<xs:enumeration value="Lobby"/>
+			<xs:enumeration value="Lower Ground Floor"/>
+			<xs:enumeration value="Lower Level"/>
+			<xs:enumeration value="Mezzanine"/>
+			<xs:enumeration value="Observation Deck"/>
+			<xs:enumeration value="Parking"/>
+			<xs:enumeration value="Platform"/>
+			<xs:enumeration value="Podium"/>
+			<xs:enumeration value="Rooftop"/>
+			<xs:enumeration value="Sub-Basement"/>
+			<xs:enumeration value="Upper Ground Floor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--<xs:simpleType name="headOfPowerType">
+		<xs:annotation>
+			<xs:documentation>Details the legislation or regulation under which the survey was conducted, for example the Land Title Act2003 This list will be juridictionnally specific.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Coal Ownership (Restitution) Act 1990 "/>
+			<xs:enumeration value="Coal Ownership (Restitution) Regulation 2000 "/>
+			<xs:enumeration value="Community Land Development Act 1989 "/>
+			<xs:enumeration value="Community Land Development Regulation 2000 "/>
+			<xs:enumeration value="Community Land Management Act 1989 "/>
+			<xs:enumeration value="Conveyancing (General) Regulation 2003 "/>
+			<xs:enumeration value="Conveyancing Act 1919 "/>
+			<xs:enumeration value="Crown Lands Act 1989 "/>
+			<xs:enumeration value="Crown Lands (Continued Tenures) Act 1989 "/>
+			<xs:enumeration value="Encroachment of Buildings Act 1922 "/>
+			<xs:enumeration value="Environmental Planning and Assessment Act 1979 "/>
+			<xs:enumeration value="Evidence Act 1995 "/>
+			<xs:enumeration value="Housing Act 2001 "/>
+			<xs:enumeration value="Lake Illawarra Authority Act 1987 "/>
+			<xs:enumeration value="Landcom Corporation Act 2001 "/>
+			<xs:enumeration value="Local Government Act 1993 "/>
+			<xs:enumeration value="Lord Howe Island Act 1953 "/>
+			<xs:enumeration value="Pipelines Act 1967 "/>
+			<xs:enumeration value="Pipelines Regulation 2000 "/>
+			<xs:enumeration value="Prescription Act 1832 "/>
+			<xs:enumeration value="Real Property Act 1900 "/>
+			<xs:enumeration value="Real Property Regulation 2003 "/>
+			<xs:enumeration value="Roads Act 1993 "/>
+			<xs:enumeration value="Strata Schemes (Freehold Development) Act 1973 "/>
+			<xs:enumeration value="Strata Schemes (Freehold Development) Regulation 2002 "/>
+			<xs:enumeration value="Strata Schemes (Leasehold Development) Act 1986 "/>
+			<xs:enumeration value="Strata Schemes (Leasehold Development) Regulation 2002 "/>
+			<xs:enumeration value="Strata Schemes Management Act 1996 "/>
+			<xs:enumeration value="Strata Schemes Management Amendment Act 2004 "/>
+			<xs:enumeration value="Strata Schemes Management Regulation 1997 &amp; 2005"/>
+			<xs:enumeration value="Surveying Act 2002"/>
+			<xs:enumeration value="Surveying Regulation 2006"/>
+		</xs:restriction>
+	</xs:simpleType>-->
+	<xs:simpleType name="jurisdictionType">
+		<xs:annotation>
+			<xs:documentation>This is the name of the juridiction in which the Survey Lies (ie which state)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="New South Wales"/>
+			<!--<xs:enumeration value="Australian Capital Territory"/>-->
+			<!--<xs:enumeration value="Northern Territory"/>
+			<xs:enumeration value="Queensland"/>
+			<xs:enumeration value="South Australia"/>
+			<xs:enumeration value="Tasmania"/>
+			<xs:enumeration value="Western Australia"/>
+			<xs:enumeration value="Victoria"/>-->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="monumentCondition">
+		<xs:annotation>
+			<xs:documentation>This gives a general indication of the condition of the monument</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Destroyed"/>
+			<xs:enumeration value="Not Found"/>
+			<xs:enumeration value="Uncertain"/>
+			<xs:enumeration value="Subsidence Area"/>
+			<xs:enumeration value="Found Intact"/>
+			<xs:enumeration value="Restricted Access"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--
+	<xs:simpleType name="monumentPurpose">
+		<xs:annotation>
+			<xs:documentation>This indicates the purpose of a monument within a survey</xs:documentation>
+		</xs:annotation>
+		<xs:list>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Azimuth/Datum"/>
+					<xs:enumeration value="Boundary "/>
+					<xs:enumeration value="Reference"/>
+					<xs:enumeration value="Survey Control"/>
+					<xs:enumeration value="Traverse"/>
+					<xs:enumeration value="Witness"/>
+					<xs:enumeration value="Self Reference"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:list>
+	</xs:simpleType>
+-->
+	<xs:simpleType name="monumentState">
+		<xs:annotation>
+			<xs:documentation>Indicates how the mark is sourced for the survey and whether it replaces any other marks</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Found"/>
+			<xs:enumeration value="Gone"/>
+			<xs:enumeration value="Not Found"/>
+			<xs:enumeration value="Placed"/>
+			<xs:enumeration value="Not Marked"/>
+			<xs:enumeration value="Found By Me"/>
+			<xs:enumeration value="Not Marked Obstructed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="monumentType">
+		<xs:annotation>
+			<xs:documentation>This indicates the material makeup of the Monument</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DH&amp;W"/>
+			<xs:enumeration value="GIP"/>
+			<xs:enumeration value="Wing"/>
+			<xs:enumeration value="Reference Tree"/>
+			<xs:enumeration value="Tree"/>
+			<xs:enumeration value="Approved Mark"/>
+			<xs:enumeration value="Broad Arrow"/>
+			<xs:enumeration value="Conc Block"/>
+			<xs:enumeration value="DH"/>
+			<xs:enumeration value="Bottle"/>
+			<xs:enumeration value="Lockspit"/>
+			<xs:enumeration value="Metal Spike"/>
+			<xs:enumeration value="GIN"/>
+			<xs:enumeration value="Nail"/>
+			<xs:enumeration value="Peg"/>
+			<xs:enumeration value="PM"/>
+			<xs:enumeration value="Pipe"/>
+			<xs:enumeration value="Post"/>
+			<xs:enumeration value="PVC Pipe"/>
+			<xs:enumeration value="Rod"/>
+			<xs:enumeration value="Specified Point"/>
+			<xs:enumeration value="Spike"/>
+			<xs:enumeration value="Star Picket"/>
+			<xs:enumeration value="SSM"/>
+			<xs:enumeration value="Reference Mark Token"/>
+			<xs:enumeration value="TS"/>
+			<xs:enumeration value="Not Marked"/>
+			<xs:enumeration value="Occupation"/>
+			<xs:enumeration value="MM"/>
+			<xs:enumeration value="GB"/>
+			<xs:enumeration value="CP"/>
+			<xs:enumeration value="CR"/>
+			<xs:enumeration value="Witness Mark"/>
+			<xs:enumeration value="BM"/>
+			<xs:enumeration value="Steel Fence Post"/>
+			<xs:enumeration value="Chiselled Triangle"/>
+			<xs:enumeration value="Non Corrodible Bolt"/>
+			<xs:enumeration value="Non Corrodible Spike"/>
+			<xs:enumeration value="Non Corrodible Nail"/>
+			<xs:enumeration value="Bench Mark Token"/>
+			<xs:enumeration value="Boundary Mark Token"/>
+			<xs:enumeration value="Non Corrodible Nail And Wing"/>
+			<xs:enumeration value="PVC Star Picket"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="observationType">
+		<xs:annotation>
+			<xs:documentation>This enumeration indicates whether the reduced observation information provided was actually measured (observed), calculated or deduced from observations, or adopted from another survey</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Adopted"/>
+			<xs:enumeration value="Calculated"/>
+			<xs:enumeration value="Deducted"/>
+			<xs:enumeration value="Measured"/>
+			<xs:enumeration value="Modified"/>
+			<xs:enumeration value="Scaled"/>
+			<xs:enumeration value="Compiled"/>
+			<xs:enumeration value="LRSCalculated"/>
+			<xs:enumeration value="Cadastral Traverse"/>
+			<xs:enumeration value="AUSPOS"/>
+			<xs:enumeration value="Static GNSS"/>
+			<xs:enumeration value="RTK GNSS"/>
+			<xs:enumeration value="CORS NRTK GNSS"/>
+			<xs:enumeration value="CORS RTK GNSS"/>
+			<xs:enumeration value="CORS Static GNSS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="parcelClass">
+		<xs:annotation>
+			<xs:documentation>The parcel class combines both parcel intent and topology class.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Administrative Area"/>
+			<xs:enumeration value="Association Property"/>
+			<xs:enumeration value="Building"/>
+			<xs:enumeration value="Caveat"/>
+			<xs:enumeration value="Common Property"/>
+			<xs:enumeration value="Covenant"/>
+			<xs:enumeration value="Designated Area"/>
+			<xs:enumeration value="Easement"/>
+			<xs:enumeration value="Exclusive Use Area"/>
+			<xs:enumeration value="Footprint"/>
+			<xs:enumeration value="Hydrography"/>
+			<xs:enumeration value="Lease"/>
+			<xs:enumeration value="License"/>
+			<xs:enumeration value="Lot"/>
+			<xs:enumeration value="Permit"/>
+			<xs:enumeration value="Profit A Prende"/>
+			<xs:enumeration value="Positive Covenant"/>
+			<xs:enumeration value="Restriction On Use Of Land"/>
+			<xs:enumeration value="Restriction On User"/>
+			<xs:enumeration value="Reserved Road"/>
+			<xs:enumeration value="Road"/>
+			<xs:enumeration value="Railway"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="parcelFormat">
+		<xs:annotation>
+			<xs:documentation>Parcel Format describes how the parcel is described, ie Standard (2D), Volumertric (3D)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Standard"/>
+			<xs:enumeration value="Strata"/>
+			<xs:enumeration value="Stratum"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="purpSurvType">
+		<xs:annotation>
+			<xs:documentation>This is a jurisdictionally based list of purposes of Survey and can be jurisdictionally specific for example Subdivision, Identification (re-peg), Amalgamation (Consolidation) etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Additional Sheet For Community Title Plan"/>
+			<xs:enumeration value="Boundary Adjustment Plan For Community Title Plan"/>
+			<xs:enumeration value="Building Alteration Plan"/>
+			<xs:enumeration value="Building Alteration Plan - Leasehold"/>
+			<xs:enumeration value="Building Stratum Subdivision"/>
+			<xs:enumeration value="Coal Definition"/>
+			<xs:enumeration value="Community Plan"/>
+			<xs:enumeration value="Community Plan Of Consolidation"/>
+			<xs:enumeration value="Community Plan Of Subdivision"/>
+			<xs:enumeration value="Consolidation"/>
+			<xs:enumeration value="Crown Folio Creation"/>
+			<xs:enumeration value="Delimitation"/>
+			<xs:enumeration value="Departmental"/>
+			<xs:enumeration value="Easement"/>
+			<xs:enumeration value="Ex-Survey Plan"/>
+			<xs:enumeration value="Lease"/>
+			<xs:enumeration value="Limited Folio Creation"/>
+			<xs:enumeration value="Neighbourhood Plan"/>
+			<xs:enumeration value="Neighbourhood Plan Of Consolidation"/>
+			<xs:enumeration value="Neighbourhood Plan Of Subdivision"/>
+			<xs:enumeration value="Oyster Lease"/>
+			<xs:enumeration value="Part Strata"/>
+			<xs:enumeration value="Pipelines Act, 1967"/>
+			<xs:enumeration value="Precinct Plan"/>
+			<xs:enumeration value="Precinct Plan Of Consolidation"/>
+			<xs:enumeration value="Precinct Plan Of Subdivision"/>
+			<xs:enumeration value="Primary Application"/>
+			<xs:enumeration value="Redefinition"/>
+			<xs:enumeration value="Replacement Sheet For Community Title Plan"/>
+			<xs:enumeration value="Resumption Or Acquisition"/>
+			<xs:enumeration value="Road Or Motorway"/>
+			<xs:enumeration value="Roads Act, 1993"/>
+			<xs:enumeration value="Strata Plan"/>
+			<xs:enumeration value="Strata Plan - Leasehold"/>
+			<xs:enumeration value="Strata Plan Of Consolidation"/>
+			<xs:enumeration value="Strata Plan Of Consolidation - Leasehold"/>
+			<xs:enumeration value="Strata Plan Of Subdivision"/>
+			<xs:enumeration value="Strata Plan Of Subdivision - Leasehold"/>
+			<xs:enumeration value="Staged Strata Plan"/>
+			<xs:enumeration value="Staged Strata Plan Of Subdivision"/>
+			<xs:enumeration value="Subdivision"/>
+			<xs:enumeration value="Surrender"/>
+			<xs:enumeration value="Survey Information Only"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="registrationType">
+		<xs:annotation>
+			<xs:documentation>This is a jurisdictionally based list of classes of registration for a surveyor.  This allows validation of the surveyors role in the survey for legal traceablity.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Registered"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="roadNameSuffixType">
+		<xs:annotation>
+			<xs:documentation>to Allow a list of specific road suffixes to be specified, ie east, upper etc (ie Fred Street East)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Central"/>
+			<xs:enumeration value="East"/>
+			<xs:enumeration value="Extension"/>
+			<xs:enumeration value="Lower"/>
+			<xs:enumeration value="North"/>
+			<xs:enumeration value="North East"/>
+			<xs:enumeration value="North West"/>
+			<xs:enumeration value="South "/>
+			<xs:enumeration value="South East"/>
+			<xs:enumeration value="South West"/>
+			<xs:enumeration value="Upper"/>
+			<xs:enumeration value="West"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="roadNameTypeType">
+		<xs:annotation>
+			<xs:documentation>to define a jurisdictionally specific list of Road name types such a street, road, avenue etc.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Access"/>
+			<xs:enumeration value="Accessway"/>
+			<xs:enumeration value="Alley"/>
+			<xs:enumeration value="Alleyway"/>
+			<xs:enumeration value="Amble"/>
+			<xs:enumeration value="Anchorage"/>
+			<xs:enumeration value="Approach"/>
+			<xs:enumeration value="Arcade"/>
+			<xs:enumeration value="Artery"/>
+			<xs:enumeration value="Avenue"/>
+			<xs:enumeration value="Basin"/>
+			<xs:enumeration value="Beach"/>
+			<xs:enumeration value="Bend"/>
+			<xs:enumeration value="Block"/>
+			<xs:enumeration value="Boardwalk"/>
+			<xs:enumeration value="Boulevard"/>
+			<xs:enumeration value="Boulevarde"/>
+			<xs:enumeration value="Brace"/>
+			<xs:enumeration value="Brae"/>
+			<xs:enumeration value="Branch"/>
+			<xs:enumeration value="Break"/>
+			<xs:enumeration value="Bridge"/>
+			<xs:enumeration value="Broadway"/>
+			<xs:enumeration value="Brow"/>
+			<xs:enumeration value="Bypass"/>
+			<xs:enumeration value="Byway"/>
+			<xs:enumeration value="Causeway"/>
+			<xs:enumeration value="Centre"/>
+			<xs:enumeration value="Centreway"/>
+			<xs:enumeration value="Chase"/>
+			<xs:enumeration value="Circle"/>
+			<xs:enumeration value="Circlet"/>
+			<xs:enumeration value="Circuit"/>
+			<xs:enumeration value="Circus"/>
+			<xs:enumeration value="Close"/>
+			<xs:enumeration value="Colonnade"/>
+			<xs:enumeration value="Common"/>
+			<xs:enumeration value="Concourse"/>
+			<xs:enumeration value="Copse"/>
+			<xs:enumeration value="Corner"/>
+			<xs:enumeration value="Corso"/>
+			<xs:enumeration value="Court"/>
+			<xs:enumeration value="Courtyard"/>
+			<xs:enumeration value="Cove"/>
+			<xs:enumeration value="Crescent"/>
+			<xs:enumeration value="Crest"/>
+			<xs:enumeration value="Cross"/>
+			<xs:enumeration value="Crossing"/>
+			<xs:enumeration value="Crossroad"/>
+			<xs:enumeration value="Crossway"/>
+			<xs:enumeration value="Cruiseway"/>
+			<xs:enumeration value="Cul-de-Sac"/>
+			<xs:enumeration value="Cutting"/>
+			<xs:enumeration value="Dale"/>
+			<xs:enumeration value="Dell"/>
+			<xs:enumeration value="Deviation"/>
+			<xs:enumeration value="Dip"/>
+			<xs:enumeration value="Distributor"/>
+			<xs:enumeration value="Drive"/>
+			<xs:enumeration value="Driveway"/>
+			<xs:enumeration value="Edge"/>
+			<xs:enumeration value="Elbow"/>
+			<xs:enumeration value="End"/>
+			<xs:enumeration value="Entrance"/>
+			<xs:enumeration value="Esplanade"/>
+			<xs:enumeration value="Estate"/>
+			<xs:enumeration value="Expressway"/>
+			<xs:enumeration value="Extension"/>
+			<xs:enumeration value="Fairway"/>
+			<xs:enumeration value="Fire Track"/>
+			<xs:enumeration value="Firetrail"/>
+			<xs:enumeration value="Flat"/>
+			<xs:enumeration value="Follow"/>
+			<xs:enumeration value="Footway"/>
+			<xs:enumeration value="Foreshore"/>
+			<xs:enumeration value="Formation"/>
+			<xs:enumeration value="Freeway"/>
+			<xs:enumeration value="Front"/>
+			<xs:enumeration value="Frontage"/>
+			<xs:enumeration value="Gap"/>
+			<xs:enumeration value="Garden(s)"/>
+			<xs:enumeration value="Gate(s)"/>
+			<xs:enumeration value="Glade"/>
+			<xs:enumeration value="Glen"/>
+			<xs:enumeration value="Grange"/>
+			<xs:enumeration value="Green"/>
+			<xs:enumeration value="Ground"/>
+			<xs:enumeration value="Grove"/>
+			<xs:enumeration value="Gully"/>
+			<xs:enumeration value="Heights"/>
+			<xs:enumeration value="Highroad"/>
+			<xs:enumeration value="Highway"/>
+			<xs:enumeration value="Hill"/>
+			<xs:enumeration value="Interchange"/>
+			<xs:enumeration value="Intersection"/>
+			<xs:enumeration value="Island"/>
+			<xs:enumeration value="Junction"/>
+			<xs:enumeration value="Key"/>
+			<xs:enumeration value="Landing"/>
+			<xs:enumeration value="Lane"/>
+			<xs:enumeration value="Laneway"/>
+			<xs:enumeration value="Lees"/>
+			<xs:enumeration value="Line"/>
+			<xs:enumeration value="Link"/>
+			<xs:enumeration value="Little"/>
+			<xs:enumeration value="Lookout"/>
+			<xs:enumeration value="Loop"/>
+			<xs:enumeration value="Lower"/>
+			<xs:enumeration value="Mall"/>
+			<xs:enumeration value="Meander"/>
+			<xs:enumeration value="Mew"/>
+			<xs:enumeration value="Mews"/>
+			<xs:enumeration value="Motorway"/>
+			<xs:enumeration value="Mount"/>
+			<xs:enumeration value="Nook"/>
+			<xs:enumeration value="Outlook"/>
+			<xs:enumeration value="Parade"/>
+			<xs:enumeration value="Park"/>
+			<xs:enumeration value="Parklands"/>
+			<xs:enumeration value="Parkway"/>
+			<xs:enumeration value="Part"/>
+			<xs:enumeration value="Pass"/>
+			<xs:enumeration value="Passage"/>
+			<xs:enumeration value="Path"/>
+			<xs:enumeration value="Pathway"/>
+			<xs:enumeration value="Piazza"/>
+			<xs:enumeration value="PKW"/>
+			<xs:enumeration value="Place"/>
+			<xs:enumeration value="Plateau"/>
+			<xs:enumeration value="Plaza"/>
+			<xs:enumeration value="Pocket"/>
+			<xs:enumeration value="Point"/>
+			<xs:enumeration value="Port"/>
+			<xs:enumeration value="Promenade"/>
+			<xs:enumeration value="Quad"/>
+			<xs:enumeration value="Quadrangle"/>
+			<xs:enumeration value="Quadrant"/>
+			<xs:enumeration value="Quay(s)"/>
+			<xs:enumeration value="Ramble"/>
+			<xs:enumeration value="Ramp"/>
+			<xs:enumeration value="Range"/>
+			<xs:enumeration value="Reach"/>
+			<xs:enumeration value="Reserve"/>
+			<xs:enumeration value="Rest"/>
+			<xs:enumeration value="Retreat"/>
+			<xs:enumeration value="Ride"/>
+			<xs:enumeration value="Ridge"/>
+			<xs:enumeration value="Ridgeway"/>
+			<xs:enumeration value="Right Of Way"/>
+			<xs:enumeration value="Ring"/>
+			<xs:enumeration value="Rise"/>
+			<xs:enumeration value="River"/>
+			<xs:enumeration value="Riverway"/>
+			<xs:enumeration value="Riviera"/>
+			<xs:enumeration value="Road"/>
+			<xs:enumeration value="Roads"/>
+			<xs:enumeration value="Roadside"/>
+			<xs:enumeration value="Roadway"/>
+			<xs:enumeration value="Ronde"/>
+			<xs:enumeration value="Rosebowl"/>
+			<xs:enumeration value="Rotary"/>
+			<xs:enumeration value="Round"/>
+			<xs:enumeration value="Route"/>
+			<xs:enumeration value="Row"/>
+			<xs:enumeration value="Rue"/>
+			<xs:enumeration value="Run"/>
+			<xs:enumeration value="Service Way"/>
+			<xs:enumeration value="Siding"/>
+			<xs:enumeration value="Slope"/>
+			<xs:enumeration value="Sound"/>
+			<xs:enumeration value="Spur"/>
+			<xs:enumeration value="Square"/>
+			<xs:enumeration value="Stairs"/>
+			<xs:enumeration value="State Highway"/>
+			<xs:enumeration value="Steps"/>
+			<xs:enumeration value="Strait"/>
+			<xs:enumeration value="Strand"/>
+			<xs:enumeration value="Street"/>
+			<xs:enumeration value="Strip"/>
+			<xs:enumeration value="Subway"/>
+			<xs:enumeration value="Tarn"/>
+			<xs:enumeration value="Terrace"/>
+			<xs:enumeration value="Thoroughfare"/>
+			<xs:enumeration value="Tollway"/>
+			<xs:enumeration value="Top"/>
+			<xs:enumeration value="Tor"/>
+			<xs:enumeration value="Towers"/>
+			<xs:enumeration value="Track"/>
+			<xs:enumeration value="Trail"/>
+			<xs:enumeration value="Trailer"/>
+			<xs:enumeration value="Triangle"/>
+			<xs:enumeration value="Trunkway"/>
+			<xs:enumeration value="Turn"/>
+			<xs:enumeration value="Underpass"/>
+			<xs:enumeration value="Upper"/>
+			<xs:enumeration value="Vale"/>
+			<xs:enumeration value="Viaduct"/>
+			<xs:enumeration value="View"/>
+			<xs:enumeration value="Villas"/>
+			<xs:enumeration value="Vista"/>
+			<xs:enumeration value="Wade"/>
+			<xs:enumeration value="Walk"/>
+			<xs:enumeration value="Walkway"/>
+			<xs:enumeration value="Way"/>
+			<xs:enumeration value="Wharf"/>
+			<xs:enumeration value="Wynd"/>
+			<xs:enumeration value="Yard"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="roadTypeType">
+		<xs:annotation>
+			<xs:documentation>To define if the road is a public or private road.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Public"/>
+			<xs:enumeration value="Private"/>
+			<xs:enumeration value="Temporary"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="surveyFormatType">
+		<xs:annotation>
+			<xs:documentation>Describes the format of the survey and is a jurisdictionally specific list for example a stand format survey, Building Format Survey.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Community Schemes"/>
+			<xs:enumeration value="Examination Survey"/>
+			<xs:enumeration value="Standard"/>
+			<xs:enumeration value="Stratum"/>
+			<xs:enumeration value="Strata Schemes"/>
+			<xs:enumeration value="Survey Information Only"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="surveyorRoleType">
+		<xs:annotation>
+			<xs:documentation>This is a jurisdictionally based list of roles that a surveyor can undertake within a survey for example field hand, authorising surveyor, technician.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Signing Surveyor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="surveyStatusType">
+		<xs:annotation>
+			<xs:documentation>Defines the status of this version of the file and will be a jurisdictionally specific list, for example "Survey Record Only", Suitable for Registration" etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Final Lodgement"/>
+			<xs:enumeration value="Pre Examination"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="titleTypeType">
+		<xs:annotation>
+			<xs:documentation>Describes the type of title interest this parcel represents, the list will be jurisdictionally specific</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Caveator"/>
+			<xs:enumeration value="Chargee"/>
+			<xs:enumeration value="Covenant"/>
+			<xs:enumeration value="Easement"/>
+			<xs:enumeration value="Lessee"/>
+			<xs:enumeration value="Mortgagee"/>
+			<xs:enumeration value="Profit A Prende"/>
+			<xs:enumeration value="Restriction"/>
+			<xs:enumeration value="Sublessee"/>
+			<xs:enumeration value="Title-Registered Proprietor"/>
+			<xs:enumeration value="Writ"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="useOfParcelType">
+		<xs:annotation>
+			<xs:documentation>Describes what the parcel is used for.  This would be a jurisdictionally specific list.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Access Channel"/>
+			<xs:enumeration value="Artificial Water Way"/>
+			<xs:enumeration value="Association Property"/>
+			<xs:enumeration value="Balcony"/>
+			<xs:enumeration value="Bay"/>
+			<xs:enumeration value="Boat Ramps"/>
+			<xs:enumeration value="Canal"/>
+			<xs:enumeration value="Car Parking"/>
+			<xs:enumeration value="Car Space"/>
+			<xs:enumeration value="Carport"/>
+			<xs:enumeration value="Cemetery"/>
+			<xs:enumeration value="Coastal Management Zone"/>
+			<xs:enumeration value="Common Property"/>
+			<xs:enumeration value="County"/>
+			<xs:enumeration value="Courtyard"/>
+			<xs:enumeration value="Creek"/>
+			<xs:enumeration value="Deck"/>
+			<xs:enumeration value="Entry"/>
+			<xs:enumeration value="Garage"/>
+			<xs:enumeration value="Garbage"/>
+			<xs:enumeration value="Garden"/>
+			<xs:enumeration value="Garden Area"/>
+			<xs:enumeration value="Garden Space"/>
+			<xs:enumeration value="Landing"/>
+			<xs:enumeration value="Letter Box"/>
+			<xs:enumeration value="Lift"/>
+			<xs:enumeration value="Loading Bay"/>
+			<xs:enumeration value="Local Government Area"/>
+			<xs:enumeration value="Locality"/>
+			<xs:enumeration value="Main"/>
+			<xs:enumeration value="Ocean"/>
+			<xs:enumeration value="Parish"/>
+			<xs:enumeration value="Parking"/>
+			<xs:enumeration value="Parking Area"/>
+			<xs:enumeration value="Patio"/>
+			<xs:enumeration value="Permit"/>
+			<xs:enumeration value="Permit To Occupy"/>
+			<xs:enumeration value="Planter"/>
+			<xs:enumeration value="Planter Box"/>
+			<xs:enumeration value="Plunge Pool"/>
+			<xs:enumeration value="Pool"/>
+			<xs:enumeration value="Porch"/>
+			<xs:enumeration value="Portico"/>
+			<xs:enumeration value="Private Yard"/>
+			<xs:enumeration value="Public Reserve"/>
+			<xs:enumeration value="Public Use Land"/>
+			<xs:enumeration value="Remainder"/>
+			<xs:enumeration value="River"/>
+			<xs:enumeration value="Roof Garden"/>
+			<xs:enumeration value="Stairs"/>
+			<xs:enumeration value="Storage"/>
+			<xs:enumeration value="Store"/>
+			<xs:enumeration value="Swimming Pool"/>
+			<xs:enumeration value="Terrace"/>
+			<xs:enumeration value="Travelling Stock Route"/>
+			<xs:enumeration value="Tree Clearing"/>
+			<xs:enumeration value="Unit"/>
+			<xs:enumeration value="Verandah"/>
+			<xs:enumeration value="Visitor Parking"/>
+			<xs:enumeration value="Void"/>
+			<xs:enumeration value="Water Feature"/>
+			<xs:enumeration value="Yard"/>
+			<xs:enumeration value="Yard Area"/>
+			<xs:enumeration value="Drainage Reserve"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Australian Simple Types Not in LandXML the ennumerations will be specified at the jusidictional level -->
+	<xs:simpleType name="horzDatumType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of horizontal datums valid for that jusidiction the common ones  MGA, AMG, Local etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Local"/>
+			<xs:enumeration value="MGA94"/>
+			<xs:enumeration value="MGA2020"/>
+			<xs:enumeration value="MM"/>
+			<xs:enumeration value="ISG"/>
+			<xs:enumeration value="TM"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="surveyBgDatumType">
+		<xs:annotation>
+			<xs:documentation>If a survey is prepared on a local grid (see horzdatumType) then the user must specify the orientation of the grid for example MGA, CAM, Of a local Plan etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Local"/>
+			<xs:enumeration value="MGA94"/>
+			<xs:enumeration value="MGA2020"/>
+			<xs:enumeration value="MM"/>
+			<xs:enumeration value="ISG"/>
+			<xs:enumeration value="TM"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="vertDatumType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of vertical datums valid for that jusidiction the common ones  AHD, Local, State, Port etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AHD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ellipsoidNameType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of ellipsoids valid for that jusidiction the common ones  ANS, WGS84 etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="vertClassType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of class values to measure the accuracy of the height examples of class are AAA, etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="L2A"/>
+			<xs:enumeration value="LA"/>
+			<xs:enumeration value="LB"/>
+			<xs:enumeration value="LC"/>
+			<xs:enumeration value="LD"/>
+			<xs:enumeration value="LE"/>
+			<xs:enumeration value="2A"/>
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="E"/>
+			<xs:enumeration value="U"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="vertOrderType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of vertical order values valid for that jusidiction the common ones  1, 2,3 etc.  These may be different from the Horizontal order values</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="L0"/>
+			<xs:enumeration value="L1"/>
+			<xs:enumeration value="L2"/>
+			<xs:enumeration value="L3"/>
+			<xs:enumeration value="L4"/>
+			<xs:enumeration value="L5"/>
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="U"/>
+			<xs:enumeration value="NA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="gsModelType">
+		<xs:annotation>
+			<xs:documentation>A jurisdictional list of adopted geiods used For GPS Heighting examples are AUSGEOID96 etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="gsMethodType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of Methods use to determine the Geoid Spheriod separation when using GPS Ellipsiod heights and converting them to AHD, Values include Rigorous, Interpolation etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="horzClassType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of class values to measure the accuracy of the position examples of class are AAA, etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="3A"/>
+			<xs:enumeration value="2A"/>
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="E"/>
+			<xs:enumeration value="U"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="horzOrderType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of horizonal order values valid for that jusidiction the common ones  1, 2,3 etc These may be different from the vertical Order Values</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="00"/>
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="U"/>
+			<xs:enumeration value="NA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="horzFixType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of allowable horizontal fix values.  For example traverse, GPS etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="From SCIMS"/>
+			<xs:enumeration value="Cadastral Traverse"/>
+			<xs:enumeration value="Scaled From Map"/>
+			<xs:enumeration value="Policy 3"/>
+			<xs:enumeration value="AUSPOS"/>
+			<xs:enumeration value="Static GNSS"/>
+			<xs:enumeration value="RTK GNSS"/>
+			<xs:enumeration value="CORS NRTK GNSS"/>
+			<xs:enumeration value="CORS RTK GNSS"/>
+			<xs:enumeration value="CORS Static GNSS"/>
+			<xs:enumeration value="Autonomous GNSS"/>
+			<xs:enumeration value="Policy 4"/>
+			<xs:enumeration value="Policy 5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="vertFixType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of methods for fixing the height ie Sprit Level, GPS etc.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SCIMS Adopted"/>
+			<xs:enumeration value="From SCIMS – Datum Validation"/>
+			<xs:enumeration value="Null"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="parcelTypeType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of parcel types specifically used in the ePlan model to define if a parcel is a sub-parcel or multipart parcel etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Single"/>
+			<xs:enumeration value="Multipart"/>
+			<xs:enumeration value="Part"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="certificateTypeType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of survey certificates defined by legislation  ie Form 13 etc</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="purposeType">
+		<xs:annotation>
+			<xs:documentation>An extension of observation purposeType defined in LandXML. Allows jurisdictions to define their own type/purpose values.
+							It is intended that the LandXML purposeType will be made a jurisdictional enum type in a future release at such time this definition will override
+							all purposeType attributes.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Boundary"/>
+			<xs:enumeration value="Connection"/>
+			<xs:enumeration value="Road"/>
+			<xs:enumeration value="Road Extent"/>
+			<xs:enumeration value="Reference"/>
+			<xs:enumeration value="Height Difference"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="distanceAccType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of distance accuracy types specifically used in the ePlan model to define state of a distance observation</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Found"/>
+			<xs:enumeration value="Placed"/>
+			<xs:enumeration value="Found By Me"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="heightMethodType">
+		<xs:annotation>
+			<xs:documentation>A  jurisdictionally specific list of method used to determine the height difference between Control Marks for the Height Difference Schedule</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Differential Levelling"/>
+			<xs:enumeration value="Trigonometric Heighting"/>
+			<xs:enumeration value="Static GNSS"/>
+			<xs:enumeration value="RTK GNSS"/>
+			<xs:enumeration value="CORS NRTK GNSS"/>
+			<xs:enumeration value="CORS RTK GNSS"/>
+			<xs:enumeration value="CORS Static GNSS"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

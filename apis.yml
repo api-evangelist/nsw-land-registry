@@ -1,0 +1,201 @@
+aid: nsw-land-registry
+url: https://raw.githubusercontent.com/api-evangelist/nsw-land-registry/refs/heads/main/apis.yml
+name: NSW Land Registry Services
+kind: company
+description: >-
+  NSW Land Registry Services (NSW LRS) operates the Torrens Title Register for
+  New South Wales, Australia's largest property market, under a concession
+  granted by the NSW Government on 1 July 2017 and held by Australian Registry
+  Investments Pty Ltd (ACN 617 926 020) as trustee for the Australian Registry
+  Investments Trust. It is a privatised operator of a public record: the
+  Registrar General retains the statutory authority and the Office of the
+  Registrar General regulates the concession, while NSW LRS runs the register,
+  examines and registers dealings and plans, and sells access to the resulting
+  data. It sits at the legal foundation of the Australian value chain, beneath
+  the REA Group and Domain portal duopoly, beneath PropTrack and CoreLogic
+  valuation, and beneath PEXA and Sympli, the Electronic Lodgment Network
+  Operators through which every Real Property Act dealing must now be lodged.
+  Its API posture is the sharpest example in this study of a registry that is
+  technically modern and commercially closed. There is no developer portal, no
+  developer or docs subdomain, no published API programme, no OpenAPI or Swagger
+  document, no SDK, no Postman workspace, no webhook catalogue and no GitHub
+  organization. Access to the register itself is gated behind a licence: the
+  site states plainly that "Only an information broker we've authorised can
+  access our records", and those brokers — InfoTrack, Dye & Durham, Equifax,
+  CITEC Confirm, TriSearch, Landchecker, Fynd, PSI Global and others — "deliver
+  and on-sell land titling and related property information through an official
+  licence agreement with NSW LRS". Wholesale data products (Property Alerts,
+  Lease Notifications, Mortgage Insights, Mortgage Verifications) are sold by
+  emailing datasolutions@nswlrs.com.au, with no self-serve path and no published
+  technical contract. What does exist, and what this profile records, are three
+  genuinely reachable machine-readable surfaces that NSW LRS never advertises to
+  developers: a Cantaloupe IIIF Image API 2.0 Level 2 endpoint serving the
+  scanned historical land records behind the Historical Land Records Viewer, an
+  anonymously callable Elasticsearch search proxy over 7,160,622 indexed
+  historical documents, and a publicly downloadable W3C XML Schema for the ICSM
+  ePlan Cadastral Information File enumerated types that pins the NSW LandXML
+  jurisdictional vocabulary now mandatory for digital plan lodgment. The
+  contracts are open; the licence is not — the HLRV terms of use prohibit
+  on-supply, data aggregation, republishing and "any device, software or routine
+  to abuse the service of HLRV or emulate human interaction and operation". RESO
+  is entirely absent: NSW LRS appears nowhere in RESO's certified-organizations
+  list, there is no RESO Web API or Data Dictionary certification, no OData
+  $metadata document and no Universal Property Identifier, which is the expected
+  answer for Australia, where RESO is a North American NAR construct with no
+  adoption. No open, unlicensed dataset is published — NSW LRS is not a
+  publishing organization on data.nsw.gov.au — and a privatised registry selling
+  the public record back through a licensed broker channel is itself the finding.
+accessModel:
+  pricing: paid
+  onboarding: contact-sales
+  trial: false
+  try_now: false
+  public: false
+  label: Broker licence agreement required · wholesale data solutions by commercial
+    contact only · no developer portal
+  confidence: high
+  source:
+  - documentation
+  - terms-of-use
+  generated: '2026-07-26'
+  method: manual
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/groq.png
+tags:
+- Real Estate
+- Australia
+- Land Registry
+- Title
+- Conveyancing
+- Property Records
+- Torrens Title
+- eConveyancing
+- Government
+- Geospatial
+- PropTech
+created: '2026-07-26'
+modified: '2026-07-26'
+specificationVersion: '0.19'
+apis:
+- aid: nsw-land-registry:nsw-lrs-hlrv-iiif-image-api
+  name: NSW LRS Historical Land Records Viewer IIIF Image API
+  description: >-
+    A live Cantaloupe Image Server exposing the International Image
+    Interoperability Framework (IIIF) Image API 2.x over the scanned NSW land
+    record images behind the Historical Land Records Viewer. Verified
+    anonymously on 2026-07-26: the endpoint root returned HTTP 200 with the
+    Cantaloupe "IIIF Image API 2.x Endpoint" documentation page advertising the
+    sample patterns /{identifier}/info.json and
+    /{identifier}/full/full/0/default.jpg, an image information document for
+    identifier eirOSD%2F0938-0939%2F0939_0937_0001.jp2 returned HTTP 200 with
+    Content-Type application/json declaring compliance profile
+    http://iiif.io/api/image/2/level2.json, and a derivative render at
+    /full/200,/0/default.jpg returned HTTP 200 with Content-Type image/jpeg and
+    16,798 bytes. The saved info.json is the machine-readable contract: it
+    declares @context http://iiif.io/api/image/2/context.json, protocol
+    http://iiif.io/api/image, the source dimensions, six pyramid sizes, tile
+    geometry, the formats jpg/tif/gif/png, the qualities bitonal/default/gray/
+    color and the full Level 2 feature list including cors, regionByPx,
+    sizeByPct, rotationArbitrary and profileLinkHeader. Identifiers are
+    constructed by the HLRV client as URL-encoded location + "/" + fileName over
+    JPEG2000 masters. NSW LRS publishes no documentation for this endpoint, no
+    OpenAPI, no key issuance and no rate-limit statement; it is an undocumented
+    backend of a free public viewer, and the HLRV terms of use expressly
+    prohibit scripted or emulated access.
+  humanURL: https://hlrv.nswlrs.com.au/
+  baseURL: https://api.lrsnative.com.au/hlrv/iiif/2
+  tags:
+  - Land Registry
+  - Historical Records
+  - IIIF
+  - Images
+  - Australia
+  properties:
+  - type: Schema
+    url: openapi/nsw-land-registry-hlrv-iiif-image-information.json
+  - type: Documentation
+    url: https://hlrv.nswlrs.com.au/
+  - type: Documentation
+    url: https://nswlrs.com.au/services/record-searches/historical-research
+  - type: Standard
+    url: https://iiif.io/api/image/2.1/
+  - type: TermsOfService
+    url: https://nswlrs.com.au/about-us/policies/terms-conditions
+- aid: nsw-land-registry:nsw-lrs-hlrv-document-search-api
+  name: NSW LRS Historical Land Records Viewer Document Search API
+  description: >-
+    An Elasticsearch search proxy that backs the Historical Land Records Viewer
+    and answers anonymously. Verified on 2026-07-26: POST
+    https://api.lrsnative.com.au/hlrv/documents/_msearch with an ndjson body of
+    {"preference":"probe"} plus {"query":{"match_all":{}},"size":2} returned HTTP
+    200 with Content-Type application/json and hits.total 7160622 across three
+    shards, with no credential of any kind supplied. The HLRV single-page app
+    configures the ReactiveSearch client with ELASTIC_SEARCH_HOST
+    https://api.lrsnative.com.au, INDEX_NAME hlrv/documents and an x-portal-token
+    header, but that header is not enforced on _msearch. Returned documents
+    carry collectionId, collectionName (for example "General Register of Deeds
+    (Old System Deeds)"), documentId, documentRenderingId, imageType, imageName,
+    bookAndNumber, scanTimestamp and an images array of JPEG2000 files with
+    fileName, location, imageId, imageStatus, seqNo and pixel dimensions — the
+    exact fields needed to build IIIF identifiers. Sibling routes are not open:
+    GET /hlrv/documents returned HTTP 503, POST /hlrv/documents/_search returned
+    HTTP 400 with {"message":"Invalid Request: TypeError: query.includes is not
+    a function"}, and POST /hlrv/lotsearch/search returned HTTP 500. There is no
+    published contract, no documentation, no versioning and no terms permitting
+    programmatic use; HLRV clause 3.6 prohibits using "any device, software or
+    routine to abuse the service of HLRV or emulate human interaction and
+    operation" and clause 2.1 prohibits on-supply, republishing and data
+    aggregation. Recorded here as an observed, reachable surface, not as an
+    offered developer product.
+  humanURL: https://hlrv.nswlrs.com.au/
+  baseURL: https://api.lrsnative.com.au/hlrv/documents
+  tags:
+  - Land Registry
+  - Historical Records
+  - Search
+  - Elasticsearch
+  - Australia
+  properties:
+  - type: Documentation
+    url: https://hlrv.nswlrs.com.au/
+  - type: Documentation
+    url: https://nswlrs.com.au/services/record-searches/how-to-find-a-record
+  - type: TermsOfService
+    url: https://nswlrs.com.au/about-us/policies/terms-conditions
+common:
+- type: Website
+  url: https://nswlrs.com.au/
+- type: Documentation
+  url: https://nswlrs.com.au/services
+- type: XSD
+  url: openapi/nsw-land-registry-eplan-cif-enumerated-types-4-0.xsd
+- type: Standard
+  url: https://nswlrs.com.au/services/plans/digital-plans
+- type: Portal
+  url: https://connect.nswlrs.com.au/
+- type: Portal
+  url: https://online.nswlrs.com.au/
+- type: Portal
+  url: https://hlrv.nswlrs.com.au/
+- type: StatusPage
+  url: https://status.nswlrs.com.au/
+- type: Pricing
+  url: https://nswlrs.com.au/services/fees-payments/fees
+- type: TermsOfService
+  url: https://nswlrs.com.au/about-us/policies/terms-conditions
+- type: PrivacyPolicy
+  url: https://nswlrs.com.au/about-us/policies/privacy-policy
+- type: Copyright
+  url: https://nswlrs.com.au/copyright
+- type: Support
+  url: https://nswlrs.com.au/about-us/contact-us
+- type: Documentation
+  url: https://nswlrs.com.au/services/record-searches/how-to-find-an-information-broker
+- type: Documentation
+  url: https://nswlrs.com.au/data-solutions
+- type: Documentation
+  url: https://www.registrargeneral.nsw.gov.au/property-and-conveyancing/eConveyancing
+- type: LinkedIn
+  url: https://www.linkedin.com/company/nsw-land-registry-services/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
