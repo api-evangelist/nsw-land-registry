@@ -1,0 +1,32 @@
+generated: '2026-07-26'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: nswlrs.com.au
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Feb  2 23:59:59 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: connect.nswlrs.com.au
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Nov 12 23:59:59 2026 GMT
+  hsts: null
+- host: online.nswlrs.com.au
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  5 23:59:59 2026 GMT
+  hsts: false
+domains:
+- domain: nswlrs.com.au
+  dnssec: true
+  caa:
+  - 0 issue "www.digicert.com"
+  - 0 issuewild ";"
+  - 0 iodef "mailto:CAA.Record.Status@nswlrs.com.au"
+  - 0 issue "amazon.com"
+  - 0 issue "amazonaws.com"
+  - 0 issue "amazontrust.com"
+  spf: true
+  dmarc: false

@@ -1,0 +1,878 @@
+generated: '2026-07-26'
+method: searched
+source: https://nswlrs.com.au/glossary-of-terms
+name: NSW Land Registry Services glossary of land titling terms
+description: The controlled vocabulary NSW Land Registry Services publishes for the NSW Torrens Title
+  Register, the General Register of Deeds and eConveyancing. Harvested verbatim on 2026-07-26 from the
+  published glossary page (HTTP 200); each entry is a term and its NSW LRS definition as written by the
+  registry. This is the jurisdictional language every dealing, plan and search is expressed in, and it
+  is the nearest thing NSW LRS publishes to a data dictionary.
+term_count: 257
+terms:
+- term: abstract of title
+  definition: A listing of documents comprising the chain of evidence to a person’s estate or interest
+    in land.
+- term: acceptance
+  definition: The act of assenting to an offer (for example, the affixing of one’s signature for the purpose
+    of accepting the terms or conditions of a dealing).
+- term: access way
+  definition: A thoroughfare created over all or part of the association property of a community, precinct
+    or neighbourhood scheme and defined in an access way plan attached to the management statement.
+- term: accredited certifier
+  definition: A person identified under the Environmental Planning and Assessment Act 1979 (NSW) as authorised
+    to consent to the subdivision of land.
+- term: accretion
+  definition: The acquisition of extra land from the sea or its inlets, or from a stream, by natural,
+    gradual and imperceptible means.
+- term: acknowledgement
+  definition: A deed by which the executor(s) of a deceased estate pass an interest in Old System land
+    to the devisee under a will.
+- term: acquisition
+  definition: Except in relation to private action the compulsory acquisition of land or an easement by
+    the Commonwealth of Australia under the Lands Acquisition Act 1989 (Cth) by notification in the Commonwealth
+    of Australia Gazette.
+- term: ad medium filum
+  definition: The ‘middle thread’ of a non-tidal stream or road – there is a rebuttable rule of construction
+    (not applicable to a public road) that the title to land abutting a non-tidal stream or road extends
+    to the middle thread of the stream or road unless the rule of construction has been rebutted – known
+    as the ‘ad medium filum rule’.
+- term: ADIS
+  definition: Automated Deed Indexing System. NSW LRS’s electronic index and registration system for the
+    General Register of Deeds which commenced in 1992. The index replaced the earlier manual General Register
+    of Deeds Index and incorporated other previously separate indexes into the General Register of Deeds
+    such as the Bills of Sale Index and the Register of Resumptions. This index mainly contains General
+    Register records registered from the November 1992.
+- term: administrator
+  definition: A person to whom letters of administration are granted by the court in the event of death
+    without leaving a will (intestate), or where the will does not specify an executor.
+- term: AHD
+  definition: Australian Height Datum. The origin height for all reduced levels as fixed by the Surveyor
+    General.
+- term: alienated
+  definition: The capacity for a piece of property or a property right to be transferred by grant or purchase
+    from the Crown.
+- term: alienation
+  definition: The passing of Crown lands into private ownership.
+- term: allotment
+  definition: The smallest subdivision of land in a section of a town or village map.
+- term: ALTS
+  definition: The Automated Land Titles System based on the computerised Real Property Act Register. Now
+    superseded by the Integrated Titling System (ITS).
+- term: appointment of receivers
+  definition: The act of making a person or firm responsible for the function of holding property for
+    safe keeping or its administration for the sale and recovery of another person’s debt.
+- term: appropriation
+  definition: In relation to land, the taking of Crown land by a Crown authority for the purpose of a
+    public work, not effective against land or an easement held by the Commonwealth of Australia.
+- term: approved form
+  definition: A form approved by the Registrar General for the purposes of a provision of the Real Property
+    Act 1900 (NSW) or any other Act.
+- term: assign
+  definition: The act of transferring a property, interest or equity the legal successor of ownership.
+- term: association property
+  definition: The communal property created in a community, precinct or neighbourhood plan.
+- term: assurance fund
+  definition: The fund established under the Real Property Act 1900 (NSW) to compensate persons deprived
+    of land, or an interest in land, by the operation of that Act.
+- term: attestation
+  definition: The witnessing of the signature or execution of a document.
+- term: azimuth
+  definition: The datum line specially determined from established survey monuments on public record and
+    its bearing or direction, adopted by a surveyor as the base line for a survey. Alternatively, the
+    bearing used may be taken from astronomical observations.
+- term: bank (of stream)
+  definition: The limit of the bed of any lake or stream. Can be stated as the high bank, the low bank
+    and so on, depending on circumstances.
+- term: bankrupt
+  definition: Against whose estate a sequestration (seizure) order has been made, or who has become bankrupt
+    by virtue of the presentation of a debtor’s petition.
+- term: bed (of stream)
+  definition: The whole of the soil of any lake or stream between the banks including that part which
+    is alternatively covered and left bare through fluctuations in normal (but not flood) water flow.
+- term: benchmark
+  definition: A survey mark used to establish the relative height of a feature in a plan – usually measured
+    as a reduced level AHD.
+- term: beneficiary
+  definition: A person acquiring land or other forms of property under a will.
+- term: bill of sale
+  definition: A mortgage of goods and chattels (personal property) given in security for money borrowed
+    – does not affect land.
+- term: blaze
+  definition: A prominent survey mark cut into a tree.
+- term: body corporate
+  definition: The former management body of the common property under the Conveyancing (Strata Titles)
+    Act 1961 (NSW) and the Strata Titles Act 1973 (NSW). Now known as the owners corporation.
+- term: bona fide
+  definition: In good faith
+- term: bounds
+  definition: The limits of a parcel of land, especially by reference to those lands and features by which
+    it is bounded – see also ‘metes’, hence metes and bounds descriptions of land.
+- term: by-laws
+  definition: By-laws are rules or regulations governing a strata or a community development scheme which
+    have been determined by the developer; or are statutory by-laws (exist at law). They apply to strata
+    plans and community, neighbourhood and precinct plans and are set out in management statements.
+- term: cadastral
+  definition: Records of a cadastre, concerned with keeping a cadastre, an official register of property,
+    with details such as boundaries and ownership.
+- term: cadastral map
+  definition: A map showing legal survey boundaries, portion and plan numbers, parish and county names
+    and boundaries. In NSW the ‘cadastre map’ is the official index map of land showing boundaries, railways,
+    roads, waterways, parcel identifiers and other information which define subdivision patterns and other
+    parcel features of a locality on the ground. This is currently maintained by NSW LRS in the Digital
+    Cadastral Database (DCDB).
+- term: cadastre
+  definition: The current subdivision pattern of a locality on the ground, that is, boundaries, roads,
+    waterways, parcel identifiers, names and so on – ‘cadastral’ has a corresponding meaning.
+- term: cause
+  definition: Any grounds for legal proceedings before a court. Causes affecting Old System property may
+    be searched using the Causes Writs and Orders (CWO) search.
+- term: causes, writs and orders
+  definition: NSW LRS’s computerised system supports a consolidated search of causes, writs, and orders.
+    Writs and orders affecting land are issued by courts for the purposes of enforcing a judgment, and
+    causes are legal notifications that court action is taking place. Such documents can restrict transfer
+    or protect a party’s interest with respect to an Old System property.
+- term: caution
+  definition: A warning, pursuant to section 28J of the Real Property Act 1900 (NSW) and entered on a
+    qualified title, to persons dealing with the registered proprietor of land that the land is held subject
+    to any subsisting interests under section 28K of the Real Property Act, whether recorded or not on
+    the title.
+- term: caveat
+  definition: A document recorded on a Torrens title which states a claim of an interest or estate in
+    the land and may have the effect of an injunction that requires NSW LRS to refrain from registering
+    specific transactions on the land title. If a caveat has been registered, it appears in the second
+    schedule of a title search.
+- term: caveator
+  definition: The person by whom or on whose behalf a caveat has been lodged in NSW LRS.
+- term: certificate of title
+  definition: A counterpart document to the Torrens Title Register which is issued as a certificate of
+    ownership and provides evidence of a person’s right to deal with the land in the title. A new edition
+    of the certificate of title is issued by NSW LRS each time that a property changes ownership and when
+    certain other transactions occur, such as registration of a mortgage or lease.
+- term: certification
+  definition: A certificate endorsed on a dealing stating it is correct for the purposes of the Real Property
+    Act 1900 (NSW).
+- term: certified copy
+  definition: A copy of an original document endorsed by a solicitor or any other prescribed functionary
+    verifying that the document is a true and correct copy of the original.
+- term: chain of title
+  definition: The series of deeds and documents evidencing title to land held under common law title –
+    like any chain, it is no stronger than its weakest link.
+- term: charge
+  definition: A form of security encumbering land created for the purposes of securing the payment of
+    an annuity, rent. Charge or sum of money other than a debt.
+- term: check survey
+  definition: Historical departmental surveys, now catalogued as examination surveys. Check surveys were
+    undertaken by the Registrar General’s surveyors to check and confirm the standard of work shown on
+    other surveyors' plans lodged for registration. Check surveys are no longer undertaken by the Registrar
+    General.
+- term: classified road
+  definition: A road declared by the Minister for Transport Services under Part 5 of the Roads Act 1993
+    (NSW) for a specific public purpose or use; for example, highway, freeway and tourist road.
+- term: common law title
+  definition: Land alienated from the Crown in fee and not subject to the provisions of the Real Property
+    Act 1900 (NSW) or any estate or interest therein. See also ‘Old System land’.
+- term: common property
+  definition: In a strata scheme, it is all the areas of land and buildings not included in any lot. The
+    property is owned jointly by all the unit owners in each strata. There is a separate title for the
+    common property, distinct from the title held by each individual unit owner.
+- term: community plan
+  definition: A plan of subdivision subject to the Community Land Development Act 1989 (NSW) that divides
+    land into two or more community development lots and at least one community property lot. Shows a
+    subdivision of land consisting of private lots and common property, where the proposed future uses
+    of the lots can be specified.
+- term: community scheme
+  definition: A community, precinct or neighbourhood development subdividing land under the provisions
+    of the Community Land Development Act 1989 (NSW). Has up to 3 tiers of management called, ‘community’,
+    ‘precinct’ and ‘neighbourhood’ associations. A strata plan can be part of a community development
+    scheme but generally such a scheme would contain individual privately owned lots and individual parcels
+    which are owned in common. A strata scheme on its own has different requirements to a community development
+    scheme.
+- term: complied plan
+  definition: A plan of land compiled mathematically from existing survey information without further
+    survey on the ground.
+- term: consent authority
+  definition: The local council or other authority that has the function of giving an approval, consent
+    or certificate under the provisions of the Environmental Planning and Assessment Act 1979 (NSW) or
+    chapter 7 of the Local Government Act 1993 (NSW). See also ‘subdivision certificate’.
+- term: consolidation
+  definition: In relation to land, the combining of two or more land parcels into one parcel.
+- term: contiguous
+  definition: Adjoining, side by side, having a common boundary – land is contiguous to other land even
+    if it is divided by, or separated from the other land by, a natural feature (such as a watercourse)
+    or by a railway, road, public reserve or drainage reserve.
+- term: conversion action
+  definition: An action initiated by NSW LRS to convert Old System land to Torrens title.
+- term: conveyance
+  definition: An assurance of property, by deed (other than a will), passing an estate or interest in
+    land held under common law (Old System) title, but can have a wider application to land transactions
+    generally, hence conveyancing.
+- term: county
+  definition: One of 141 basic divisions of the State of New South Wales, further divided into parishes,
+    for administrative purposes, especially for management and disposal of Crown lands.
+- term: covenant
+  definition: Generally a mutual agreement between two or more parties to do, or to refrain from doing,
+    certain acts in relation to land. Often contained in lease agreements, but in these directions, it
+    particularly refers to a restrictive covenant (now a restriction on the use of land) or a positive
+    covenant binding a proprietor to do or complete a specified action.
+- term: covenant charge
+  definition: A charge imposed on land (resulting from a failure to perform a positive covenant) for securing
+    the payment of money.
+- term: cross-easement
+  definition: See ‘party wall’.
+- term: Crown grant
+  definition: The instrument under the hand of the Governor representing the Crown whereby the Crown passed
+    an estate in fee simple to the grantee.
+- term: Crown land
+  definition: Land vested in the State of New South Wales and under the direct care and control of the
+    Minister Administering the Crown Land Act 1989 (NSW). This land may be held under Crown title or Torrens
+    title.
+- term: Crown road
+  definition: A road under the care and control of the Minister Administering the Crown Lands Act 1989
+    (NSW) and including boundary and reserved roads. They remain Crown land.
+- term: Crown title
+  definition: Unalienated land, vested in the Crown under the direct care and control of the Minister
+    Administering the Crown Lands Act 1989 (NSW), not held under Torrens title system.
+- term: current plan
+  definition: Generally the most recently registered plan of subdivision including a particular parcel
+    of land – with some exceptions, land may not be dealt with except as a lot in the current plan.
+- term: DCDB
+  definition: Digital Cadastral Database – the legal parcel fabric (current subdivisional pattern) of
+    the state supplied by NSW LRS.
+- term: dealing
+  definition: A dealing is any document evidencing a land transaction and prepared in accordance with
+    the Real Property Act 1900 (NSW) and regulations which can be registered in the Torrens Title Register
+    examples include transfer, mortgage, lease and notice of death.
+- term: deceased estate
+  definition: Property belonging to a deceased (dead) person or persons.
+- term: deed
+  definition: Any legal document prepared for some purpose in relation to land which has been signed and
+    executed. It may or may not be registered in the General Register of Deeds maintained by NSW LRS.
+- term: delivery box
+  definition: A NSW LRS client document delivery reference system whereby a numbered and keyed, secure
+    locked box is provided in which certificate of title, duplicate dealings and other documents are placed
+    for an entitled party to accept delivery.
+- term: delivery direction
+  definition: An instruction given on a dealing, or draft, to issue (or not to issue) a certificate of
+    title for a folio of the register and to deliver it and any other documentation, for example, duplicate
+    lease to a particular party or delivery box.
+- term: deposited plan
+  definition: A plan of land deposited in NSW LRS, which was not attached to a dealing or deed, showing
+    land boundary information whether for a new subdivision or other purpose; for example, identifying
+    the location of an easement for land acquisition. The Registrar General may, for convenience, number
+    or renumber other plans as deposited plans or prepare deposited plans of their own motion. Plans of
+    strata schemes are called strata plans.
+- term: derived lots
+  definition: A term used to specifically identify strata lots created in plans registered under any Act
+    prior to 1 July 1974.
+- term: development contract
+  definition: Instruments, plans and drawings which are registered with a strata or community scheme and
+    described the manner in which the developer intends to further develop the land in the scheme.
+- term: development lots
+  definition: A term used to specifically identify strata lots created in staged development strata plan
+    specifically for further subdivision development.
+- term: devisee
+  definition: A person acquiring land under a will.
+- term: devolution of law
+  definition: The passing of title to land by the operation of law; for example, by a will or by the laws
+    of distribution out of an intestate estate.
+- term: discharge of mortgage
+  definition: A dealing prepared and signed in writing by the mortgagee that acknowledges that the principal
+    and interest secured by a mortgage have been repaid in full. This document must be registered with
+    NSW LRS to remove any recording of the mortgage from the land title.
+- term: dominant tenement
+  definition: Any land to which the benefit of an easement is appurtenant, also being the land which benefits
+    from the use of the easement.
+- term: draft
+  definition: Hand-written instruction, arising from a dealing, from which the information for a new manual
+    folio of the register (Vol. Fol.) is taken.
+- term: drainage reserve
+  definition: Land set aside to the public for exclusive use of drainage of water – section 49, Local
+    Government Act 1993 (NSW).
+- term: easement
+  definition: A right, attached to land (the dominant tenement), to use other land (the servient tenement)
+    for a specified non–exclusive purpose known to the law, examples include, right of carriageway, easement
+    to drain water – however, the law recognises an easement in favour of a statutory authority without
+    a dominant tenement, described as an ‘easement in gross’.
+- term: encumbrance
+  definition: A legal interest recorded on title such as a mortgage, lease or easement.
+- term: epitome of title
+  definition: A summary of title, listing the documents comprising an Old System (common law) chain of
+    title.
+- term: equity of redemption
+  definition: The right of a mortgagor at common law to redeem the land conveyed by way of mortgage and
+    so obtain a re-conveyance.
+- term: established permanent mark
+  definition: A permanent mark the position of which is precisely determined by coordinates to a SCIMS
+    horizontal accuracy rating of 4 or less.
+- term: estate
+  definition: An interest in land, for example, an estate in fee simple or leasehold estate.
+- term: estate in fee simple
+  definition: The greatest estate in land that can be held against the Crown. It is characterised by its
+    inheritability, that is, it is capable of being passed to heirs and/or assigns for ever or for so
+    long as an owner can be found. The estate may be passed by a grant from the Crown, a deed, a transfer
+    or by will or devolution of law.
+- term: estate in remainder
+  definition: An estate limited to take effect and be enjoyed after another estate has been determined.
+- term: estate pur autre vie
+  definition: An estate for the life of some other person, for example, to A for the life of B – where
+    A has an estate for the term of B’s life.
+- term: examination survey
+  definition: Surveys undertaken by Office of the Registrar General surveyors to resolve anomalies in
+    boundary definition. If appropriate, plans may be placed on public record. These plans are not used
+    for title description or title issue.
+- term: execution
+  definition: The act of signing and sealing a document or instrument in the presence of witnesses.
+- term: executor
+  definition: Person appointed by the testator to carry out the provisions of the will.
+- term: fee simple
+  definition: The greatest estate in land that can be held against the Crown. It is characterised by its
+    inheritability, that is, it is capable of being passed to heirs and/or assigns for ever or for so
+    long as an owner can be found. The estate may be passed by a Grant from the Crown, a deed, a transfer
+    or by will or devolution of law.
+- term: fiduciary
+  definition: A person who is under an obligation to act in another person’s interest, for example, a
+    trustee, executor or administrator.
+- term: first schedule
+  definition: The part of a Torrens folio which sets out the ownership details (names of the registered
+    proprietors, shares and so on).
+- term: folio instruction
+  definition: A direction from Crown Lands NSW, on how a new Torrens title for land held by the Crown
+    will issue – replaced the traditional Crown grant.
+- term: folio of the registrar
+  definition: A folio is a page of the land register. The record of title and interests, in respect of
+    a parcel or parcels of land, kept by the Registrar General as part of the Register. A folio may be
+    either a ‘computer’ folio (stored in NSW LRS' computerised system) or a ‘manual’ folio (created originally
+    on paper).
+- term: freehold
+  definition: The status of land held under an estate in fee simple following alienation from the Crown.
+- term: good root of title
+  definition: The starting point from which title to Old System land may be considered acceptable. It
+    is usually a conveyance or mortgage for valuable consideration which is at least 30 years old at the
+    time of the search.
+- term: GPR
+  definition: Government Property Register – is the single source of whole-of-government property data.
+    It provides an integrated data source combining data from individual owner agencies with data from
+    NSW LRS to give a total picture of the State’s land holdings.
+- term: grant
+  definition: Any Crown grant of land by the Crown to private ownership. The land is said to be ‘alienated
+    from the Crown in fee’.
+- term: hiatus
+  definition: An unintended gap left between two land parcels, deeds or land titles.
+- term: indefeasibility
+  definition: The accepted premise that a Torrens title cannot be set aside because of some defect in
+    the history of the title prior to the registration of an interest. A third party cannot be disadvantaged
+    because of the fraud of a second party. The guarantee given to Torrens title by the State Government
+    of NSW.
+- term: initial period
+  definition: The period in which there is a prohibition on the developer or owners corporation undertaking
+    certain actions. The period starts at registration of the strata plan and ends when at least one third
+    of the total unit entitlement has been transferred. (The community schemes guide should be consulted
+    for an explanation of initial periods affecting plans in community schemes.)
+- term: instrument
+  definition: Any grant, certificate of title, conveyance, assurance, deed, map, will, probate, or any
+    other document in writing relating to the disposition, devolution or acquisition of land or evidencing
+    title thereto.
+- term: inter alia (i.a.)
+  definition: Among other things
+- term: intestate
+  definition: A situation where the deceased has not left a valid will. Dying intestate.
+- term: isolated
+  definition: A road that has vehicular access to a public road only by means of a connecting temporary
+    public road.
+- term: ITS
+  definition: Integrated Titling System – a computerised land title register developed and operated by
+    NSW LRS to register plans, dealings and create and store land title records. ITS also holds records
+    of superseded titles.
+- term: joint tenancy
+  definition: A form of equal joint ownership of a parcel of land by two or more persons. The interest
+    of a deceased proprietor automatically vests in the survivors.
+- term: land
+  definition: Land is separately defined in various statutes. Where these definitions are not applicable,
+    or there is nothing evident in rebuttal, the common law definition applies, that is, land extends
+    from the centre of the earth to the sky, including not only the surface but also the soil beneath
+    it and the air above it and all things growing on it or attached to it, but does not include minerals
+    belonging to the Crown. For the definition of land in a strata scheme see Registrar General's Guidelines
+    for Strata Schemes.
+- term: land titles
+  definition: A document or series of deeds purporting to prove the ownership of a parcel of either Torrens
+    or Old System land. Almost all land titles are now held in the Integrated Titling System (ITS) and
+    can be searched in the ITS using a title search function. Generally, Old System titles must be searched
+    manually.
+- term: lease
+  definition: An instrument creating an interest in land for a stated term, usually in consideration of
+    a payment of rent. Registration with NSW LRS of commercial leases is not compulsory, but to gain maximum
+    protection, leases that have a term of more than 3 years should be registered. Residential tenancy
+    leases are not generally registered with NSW LRS.
+- term: leasehold estate
+  definition: The interest in land or premises held under a lease by a lessee.
+- term: lessee
+  definition: The person to whom land or premises is leased.
+- term: lessor
+  definition: The person, usually the registered proprietor, who leases land or premises in return for
+    payment of rent.
+- term: letters of administration
+  definition: An authorisation granted by the court to persons to administrate the estate of a deceased
+    person who has died intestate, or who died testate without having appointed an executor.
+- term: lien
+  definition: In relation to a document, a right to retain the document until a debt is satisfied.
+- term: life estate
+  definition: An estate of freehold land held during the life of the tenant or for the duration of another's
+    life.
+- term: limitation
+  definition: A recording in a folio of the register to the effect that the description of the land in
+    the folio has not been investigated by the Registrar General and the boundaries of which are not guaranteed
+    until defined in a new plan of survey.
+- term: limited title
+  definition: A certificate of title issued for land converted from Old System title whereby the boundaries
+    have not been adequately defined in a plan of survey and/or have not been investigated in NSW LRS.
+    A limitation is recorded in the second schedule.
+- term: liquidation
+  definition: The state of a company during the process of being terminated.
+- term: liquidator
+  definition: A person appointed to carry out the termination of a company.
+- term: littoral
+  definition: Relating to the shores of lakes, or the sea and its inlets.
+- term: local council
+  definition: The council for a city, municipality or shire elected by property owners for the purpose
+    of local government.
+- term: lockspits
+  definition: A type of survey mark used in rural areas comprising either trenches or lines of stones
+    set in the direction of the boundaries.
+- term: lodgment
+  definition: The acceptance by NSW LRS of dealings, plans and other documents, either by hand or electronically,
+    for processing and registration within that Office.
+- term: loose-leaf register
+  definition: Titles within the Torrens Title Register were originally filed as pages called ‘folios’
+    within books called ‘volumes’, but after Volume 8497 (from 1961), they were filed as loose-leaf pages
+    up until the time that the computerised system replaced paper records. The loose-leaf titles are also
+    sometimes known as ‘new form’ titles.
+- term: management statement
+  definition: A statement lodged with a community scheme and some strata schemes which sets out the by-laws
+    and other particulars governing the participation in the development.
+- term: memorial – Old System
+  definition: Various Acts specify that certain memorials and documents shall be lodged and/or recorded
+    in the Registrar General's Office. Generally, these things used to be lodged with the Supreme Court,
+    but custody was transferred to this Department pursuant to the Transfer of Records Act 1923 (NSW).
+    Memorials in this case are usually in the form of an affidavit and will be recorded in the General
+    Register of Deeds.
+- term: memorial – Torrens
+  definition: Various Acts specify that certain memorials and documents shall be lodged and/or recorded
+    in the Registrar General’s Office. Generally, these things used to be lodged with the Supreme Court,
+    but custody was transferred to this Department pursuant to the Transfer of Records Act 1923 (NSW).
+    Memorials in this case are usually in the form of an affidavit and will be recorded in the General
+    Register of Deeds.
+- term: metes and bounds
+  definition: Is a traditional method of land surveying in which the boundaries of land parcels are recorded
+    in terms of direction and distance.
+- term: MHWM
+  definition: Mean High Water Mark – the line defining the mean between the high tides at ordinary spring
+    and neap tides.
+- term: minor
+  definition: A person under the age of 18 years. A minor does not have full legal capacity and cannot
+    make a will.
+- term: moiety
+  definition: An archaic term used in law to mean ‘half’.
+- term: monument
+  definition: In surveying it means a natural or artificial object or point thereon or mark, which object,
+    point or mark is used for the purpose of locating a boundary or a point thereon.
+- term: mortgage
+  definition: In relation to land held under common law, a conveyance of land subject to an equity of
+    redemption. In relation to Real Property Act 1900 (NSW) land, a charge on the land created merely
+    for securing payment of a debt. When the debt is repaid, the mortgage is normally discharged.
+- term: mortgagee
+  definition: The proprietor of a mortgage, that is, the party lending the money, commonly a bank.
+- term: mortgagor
+  definition: The party who has taken out a loan which is secured by a mortgage.
+- term: MPS
+  definition: Miscellaneous Plan of Subdivision (Old System – OS) and (Torrens title – RP) – these plans
+    were discontinued in 1961. Existing plans were renumbered in the DP300000 (RP) and DP150000 (OS) series.
+- term: neighbourhood plan
+  definition: A community scheme subdivision which is either non staged and creates neighbourhood lots
+    and neighbourhood association property or a standalone scheme or as the final tier in a staged development.
+- term: notice of death
+  definition: An application which declares the death of a joint tenant and by which the survivors automatically
+    acquire the interest of the deceased pursuant to the Real Property Act 1900 (NSW).
+- term: notice of sale
+  definition: A Notice of Sale or Transfer of Land (NOS) is a document which must be submitted to NSW
+    LRS when a property changes ownership. It must accompany a transfer or other document lodged to register
+    the ownership change. NOS information is forwarded to more than 175 government agencies and authorities
+    for rating and taxing purposes. An eNOS is an online version of the NOS form.
+- term: notification
+  definition: A recording or other entry made in the second schedule of a folio of the register usually
+    recording an encumbrance such as a mortgage.
+- term: NSW LRS
+  definition: NSW Land Registry Services – the authority responsible for all plans and records relating
+    to the ownership of land throughout the State.
+- term: occupational boundary
+  definition: As applied to adverse possession of Real Property Act 1900 (NSW) land, an occupation that
+    represents or replaces an original boundary of a whole parcel.
+- term: occupations
+  definition: Physical features such as walls and fences associated with boundaries limiting the extent
+    to which a parcel of land is occupied.
+- term: official trustee in bankruptcy
+  definition: An official appointed to manage the affairs of a bankrupt.
+- term: Old System land
+  definition: Land alienated from the Crown prior to 1863 and not yet brought under the provisions of
+    the Real Property Act 1900 (NSW). As the State of New South Wales does not guarantee title to Old
+    System land, purchasers must carefully examine the chain of title for a land parcel to ensure that
+    the seller is the valid title holder and to know what reservations and encumbrances affect the land.
+- term: ordinary folio
+  definition: A folio of the register that is not a qualified folio or a limited folio.
+- term: orientation
+  definition: The alignment of directions in relation to a specified origin. See also ‘azimuth’.
+- term: overlap of deeds
+  definition: The situation arising where the metes and bounds descriptions of two parcels of land which
+    nominally adjoin are in conflict, so that the deed for each includes land comprised in the other.
+- term: owners corporation
+  definition: Comprises all proprietors of the lots from time to time in a strata scheme. They are responsible
+    for the upkeep and maintenance of the building and other common property and the general finance and
+    management of the scheme.
+- term: parcel
+  definition: An area of land defined by measurement. A parcel may be represented as a ‘lot’ in a deposited
+    plan, as a ‘portion’ in a parish – shown in a parish map in the Historical Land Records Viewer (HLRV),
+    or as an ‘allotment’ in a town (shown in a town map in HLRV). Parish and town maps can be viewed using
+    the HLRV application.
+- term: parish
+  definition: One of 7,515 areas formed by the division of 141 counties. Counties and parishes are administrative
+    divisions of the state and are not separately disposable land parcels. Parishes are divided into separately
+    disposable parcels called ‘portions’, these being the common basic units of land disposed of by the
+    Crown. Other basic units are allotments in government towns and villages.
+- term: party wall
+  definition: Separate ownership of the severed portions, and cross easements (created by the operation
+    of the Conveyancing Act 1919 (NSW)) entitling each of the owners on either side of the wall to have
+    the entire wall continued in such manner that each building shall have the support of the whole wall.
+- term: permanent mark
+  definition: A mark of a permanent nature (usually identified by a combination of letters and numbers)
+    which provides the means for all surveys to be related to the State Survey Control common co–ordinate
+    system. See also ‘established permanent mark’ and ‘SCIMS’.
+- term: perpetual (lease)
+  definition: A lease forever, unlimited in time.
+- term: personal representative
+  definition: The executor or administrator of an estate.
+- term: pipeline plan
+  definition: A plan defining land or the site of an easement vested or to be vested in an applicant for
+    license under the Pipeline Act 1967 (NSW).
+- term: plans
+  definition: Records the registration pattern of subdivision on various media, is given a legal identity
+    and lots in the plan may be sold as such at this point.
+- term: portion
+  definition: A parcel of land within a parish. The boundaries of portions within a parish are shown in
+    the parish map (available in HLRV). A more detailed plan of the portion is available from NSW LRS’s
+    approved information brokers. Most portions have now been subdivided and are represented in deposited
+    plans or strata plans but some remain current as a unsubdivided parcel of land.
+- term: positive covenant
+  definition: A condition imposed by, or for the benefit of a statutory body or a local council that binds
+    the owner of land to perform a specified act; for example, to maintain a building and its foundations
+    to ensure the safe working of a railway passing below it, or to erect a habitable dwelling upon the
+    land within a specified period of time. The positive covenant must be in terms that directly require
+    the owner of the land to do some action. See also ‘covenant charge’.
+- term: possessory title
+  definition: Title acquired without formal conveyance but by reason of occupation or possession for a
+    statutory period. The common law has always regarded possession, as prima facie evidence of ownership
+    in fee, and a trespasser (or adverse occupier) if allowed to run an unmolested course of possession,
+    will, in time, effectively bar the rights of the documentary owner to recover this land.
+- term: power of attorney
+  definition: A legal document made by one person (who is called the ‘principal’), that allows another
+    person (called the ‘attorney’) to act on the principal's behalf as prescribed by the documents, for
+    example, to deal with the principal's money, bank accounts, shares, real estate and other assets.
+    This can include spending and managing the principal's money, buying or selling shares for the principal,
+    or buying, selling, leasing or mortgaging the principal's house or other real estate. Before the attorney
+    can transfer property on behalf of the principal, the power of attorney must be registered with NSW
+    LRS. An enduring power of attorney has no time limit, whereas a general or ordinary power of attorney
+    does have a time limit .
+- term: precinct plan
+  definition: A subdivision of community development lots to create a precinct scheme within a community
+    scheme made up of precinct development lots and precinct association property which allows for another
+    tier of management and development in a community development scheme.
+- term: prescribed authority
+  definition: A government, semi–government or corporate body authorised under any Act with the power
+    to act as the dominant tenement of an easement, positive covenant or restriction on the use of land.
+    Authorisation for any body benefited by a profit a prendre is not required as no dominant tenement
+    is created.
+- term: prescribed diagram
+  definition: A diagram attached to a community management statement showing the position of any existing
+    or proposed service lines.
+- term: prescribed functionary
+  definition: A person who has an official appointment before whom a statutory declaration or other official
+    document may be executed. Their authority to attest an execution is provided for in the laws of the
+    state or country in which the document is executed. If executed in the State of NSW, the document
+    must be attested to by a justice of the peace, a solicitor, a notary public or a commissioner for
+    taking affidavits. If executed outside the State of NSW, strike out reference to the Oaths Act 1900
+    (NSW) and insert reference to the equivalent local law. The document must then be signed in accordance
+    with the local law.
+- term: prescription
+  definition: The acquisition of an easement by immemorial use (taken to be at least 12 years). While
+    recognised by the courts such easements are not certifiable under the Real Property Act 1900 (NSW).
+- term: primary application
+  definition: An application to bring Old System land under the provisions of the Real Property Act 1900
+    (NSW). An application made to NSW LRS by the property owner of Old System land to convert the Old
+    System title Torrens title.
+- term: prior title reference
+  definition: The reference number of the title from which a new folio was derived.
+- term: private road
+  definition: A road restricted in use to a limited class of people (that is, not to the public in general)
+    or for a limited period of time.
+- term: produced
+  definition: Means produced in NSW LRS, and production has a corresponding meaning.
+- term: profit a prendre
+  definition: A right to enter land you do not own and take or remove the produce or part of the soil
+    of that land, for example, rights of common, of pasture, of vesture and herbage, cropping, gravel
+    or timber.
+- term: prothonotary
+  definition: Lawyer or the chief clerk in some courts of law.
+- term: public authority
+  definition: Includes the council of a local government area and any corporation prescribed as such by
+    the regulations.
+- term: public road
+  definition: A road opened or dedicated for the free right of passage of the public – on foot, in a vehicle
+    and so on, and declared as such under the Roads Act 1993 (NSW).
+- term: qualified title
+  definition: A folio of the register in which is recorded a ‘caution’ that has not been cancelled. A
+    caution warns persons dealing with the registered proprietor that the land is held subject to any
+    ‘subsisting interests’ that may exist under Old System.
+- term: receiver
+  definition: A person authorised to manage the affairs of a bankrupt, or a person appointed by a mortgagee
+    to manage the financial affairs of the mortgagor. This applies to both individuals and companies.
+- term: reduced level
+  definition: The relative height of a point in relation to a known datum, usually AHD.
+- term: reference mark
+  definition: A survey mark of a durable nature placed or situated near and connected by measurement to
+    a corner, angle or tangent point of a survey.
+- term: register
+  definition: (The Torrens Title Register) The land titles register maintained under the Real Property
+    Act 1900 (NSW) to record information about parcels of land or strata lots, including names of owners
+    and any interests or dealings affecting the titles for such lots or parcels.
+- term: registered plan
+  definition: A category of plan of subdivision being a plan of survey containing 5 or more lots of land
+    held under common law title and registered by the Registrar General. This plan series was discontinued
+    in 1961. Existing plans were renumbered in the DP37000 series.
+- term: registered proprietor
+  definition: The person(s) seized or possessed of the freehold or other estate or interest in land and
+    recorded on the title as being the owner.
+- term: Registrar General
+  definition: The Registrar General is the official title of the state government official responsible
+    for land title records in NSW.
+- term: registration – dealings
+  definition: The recording of the effect of a dealing against the relevant folio of the Register. Such
+    recording usually results in a change of ownership or entry/removal of a second schedule notification.
+- term: registration – plans
+  definition: Upon registration the pattern of subdivision is given a legal identity and lots in the plan
+    may be sold as such at this point.
+- term: re-lodgment
+  definition: The subsequent lodgment of a dealing, plan or other document following uplifting and compliance
+    with a NSW LRS requisition.
+- term: requisition
+  definition: A form or letter requiring that certain action be taken, done, given, amended, furnished
+    and so on, to allow a dealing, plan or other document to be registered.
+- term: rescission
+  definition: The act of rescinding. (Reservation of land for a specific purpose, that is, a lease). A
+    termination of a contract either by an act of the parties to the contract or a court.
+- term: reservations and conditions in the Crown grant
+  definition: Reservations and Conditions in the Crown Grant is a clause noted on most certificates of
+    title in NSW. The original Crown Grant will specify what conditions the Crown imposed when it first
+    granted the land. That original grant may have related to a much larger parcel of land, of which the
+    land in question was once part. If the owner or customer is interested to find out what conditions
+    apply to their parcel of land, then they will have to search back through the prior titles until they
+    locate the original grant. This search may require a visit to our office in the Sydney CBD.
+- term: residue
+  definition: Land remaining in an otherwise cancelled folio of the Register, for example, sites of roads
+    remaining after the folio has been cancelled by subdivision.
+- term: restrictive covenant
+  definition: Originally a covenant by the purchaser with the vendor not to use the land for a specified
+    purpose or in a specified manner. To be enforceable against the purchaser and successors in title
+    it must be restrictive in nature and may not impose a duty to do any positive act, whether or not
+    it involves spending money. Now called a ‘restriction on the use of land’, it is usually created by
+    Section 88B instrument.
+- term: resumption
+  definition: The compulsory taking of land or an easement by the State of NSW or a statutory authority
+    under an Act of the State by a notification in the NSW Government Gazette. For the purposes of bringing
+    land under the Real Property Act 1900 (NSW) includes a compulsory acquisition by the Commonwealth
+    of Australia.
+- term: resumption application
+  definition: An application to the Registrar General by a resuming authority to be recorded as the registered
+    proprietor of land.
+- term: reversion
+  definition: The interest in an estate that reverts to the grantor or their heirs at the end of a period.
+- term: right of way
+  definition: A right of way is an easement allowing a right to use part or all of another property for
+    access purposes.
+- term: riparian
+  definition: This word relates to rivers, streams or any other natural watercourse.
+- term: riparian rights
+  definition: The rights of the proprietor of a parcel of land abutting a stream to use the water flowing
+    through it.
+- term: schedule of unit entitlement
+  definition: A schedule on community and strata plans listing the individual entitlement of every lot
+    in the scheme. Used to apportion voting rights and so on to registered proprietors.
+- term: scheme
+  definition: A plan adopted for residential development – a community scheme, a precinct scheme, a neighbourhood
+    scheme or strata scheme.
+- term: SCIMS
+  definition: Survey Control Information Management System – the computer database of the State Control
+    Survey network. SCIMS allows access to survey control information including permanent marks and coordinates,
+    and is used by surveyors for survey accuracy.
+- term: search
+  definition: To search is the act of inspecting the register for title information required to prepare
+    documents or to satisfy inquiries on reference sheets, maps or plans for survey information required
+    for the investigation deposited plans or strata plans or for conveyancing or other purposes.
+- term: search sketch
+  definition: A diagrammatic record of the documents forming the chain of title. It illustrates the land
+    description in each successive deed.
+- term: second schedule
+  definition: That part of a folio which lists exceptions, restrictions, easements and other interests
+    or notifications affecting the land.
+- term: Section 88B instrument
+  definition: An instrument under the Conveyancing Act 1919 (NSW) lodged with a deposited plan or strata
+    plan to create easements, restrictions on the use of land and positive covenants upon registration
+    of the plan as an alternative to the creation of easements via a dealing.
+- term: service line
+  definition: A pipe, wire, cable, duct or pole by means or which service is or is to be provided to a
+    lot in a community scheme.
+- term: service provider
+  definition: A statutory or government authority that provides a service to a lot in a community scheme
+    by means of a statutory easement.
+- term: servient tenement
+  definition: The land affected or burdened by an easement.
+- term: share title
+  definition: A separate title issued for a registered proprietor's share or for certain estates in a
+    land title.
+- term: SIGA
+  definition: Security Interest in Goods Act 2005 (NSW) – this Act provides for the registration of securities
+    held over assets and goods, such as livestock, crops, bills of sale, agricultural goods, stock, wool
+    and aquaculture fish mortgages.
+- term: special resolution
+  definition: A resolution of the community, precinct or neighbourhood association passed with at least
+    75 per cent of eligible voted.
+- term: stamp duty
+  definition: An ad valorem state tax on real estate transactions with a sliding scale commencing at 1.25
+    per cent of the consideration sum.
+- term: statutory easement
+  definition: Easements for the provision of essential services within a community, precinct or neighbourhood
+    scheme – section 36, Community Land Development Act 1989 (NSW). Terms are set out as a by-law in the
+    management statement and the sites are shown in the service works plan.
+- term: strata (stratum)
+  definition: The concept of layer upon layer – lots, stacked one on top of the other.
+- term: strata lot
+  definition: A lot defined in a plan lodged under strata scheme legislation. Includes lots wholly or
+    partially inside building, external lots (that maybe wholly or partially covered) and open space lots.
+- term: strata plan
+  definition: A plan lodged with NSW LRS creating individually owned lots and common property within a
+    parcel of land defining lots by a cubic space(s). Normally, a strata plan pertains to multiple units
+    within a building.
+- term: stratum lot
+  definition: A parcel of land restricted in height and/or depth by reference to Australian Height Datum
+    (AHD) or other datum approved by the Surveyor General.
+- term: stratum subdivision
+  definition: The division of land which at least one boundary between the lots in the subdivision is
+    defined by a plane that is not vertical, so horizontal or inclined planes. This type of boundary results
+    in the creation of lots on top of each other.
+- term: subdivision
+  definition: The division of land into parts for separate occupation and/or disposition. The land may
+    be subdivided either vertically or by stratum.
+- term: subdivision certificate
+  definition: The consent of the required authority, local council, accredited certifier or the Crown
+    to the subdivision of land. Endorsed in the panel on the plan.
+- term: sub-lease
+  definition: A lease of a lease.
+- term: subsidiary scheme
+  definition: A precinct scheme, neighbourhood scheme or strata scheme that subdivides a development lot
+    in an existing community or precinct scheme.
+- term: subsisting interest
+  definition: Any contingent or vested estate or interest in land, pursuant to section 28K, Real Property
+    Act 1900 (NSW) in existence at the date of issue of a qualified certificate of title.
+- term: survey (plan)
+  definition: A representation or drawing of land surveyed, prepared from particulars recorded in a field
+    book of a surveyor.
+- term: temporary road
+  definition: A road (dedicated for the purpose in a deposited plan) used as a means of access to an isolated
+    road for a limited period of time.
+- term: tenancy in common
+  definition: Each tenant has a share in the entirety which does not accrue to partners on death. It may
+    be disposed of during life or transmitted on death, either by will or according to the laws governing
+    distribution. The shares may be equal or unequal and may be created separately.
+- term: tenure
+  definition: The mode of holding or occupying unalienated Crown land, for example, a conditional purchase
+    and a perpetual lease.
+- term: testator/testatrix
+  definition: Person who has died and left a will.
+- term: the register
+  definition: The Registrar General’s Office record of ownership, restrictions and encumbrances affecting
+    Real Property Act 1900 (NSW) land.
+- term: title conversion
+  definition: The action taken within NSW LRS to convert parcels of Old System land to Torrens title.
+    It includes actions under Part IVA, Real Property Act 1900 (NSW) and the more recent conversion actions.
+- term: title diagram
+  definition: A diagram or plan endorsed on or referred to in a folio of the register, illustrating the
+    land in that folio.
+- term: title reference
+  definition: The reference used to identify a title. For titles in the computerised system, the title
+    reference is often presented in the format 1/10222, where 1 is the lot number and 10222 is the deposited
+    plan number. However, there are a range of other formats used. Prior to 1983 the title references
+    were in the form of volumes and folios, for example, Vol 1234 Fol 567.
+- term: title search
+  definition: A title search is an inspection of the register which will indicate the current owner or
+    owners of a property and also shows the estate and any other interests that may restrict full control
+    of the property by the owner. These other interests are called encumbrances and could include mortgages,
+    easements, or caveats. Online title searches are available for 99 per cent of titles in NSW.
+- term: Torrens title
+  definition: A term used to describe the system of title (or land) registration devised by Robert Richard
+    Torrens, and adopted in NSW from 1863. Under this system, title is guaranteed by the state and purchasers
+    do not need to establish the chain of ownership when purchasing property. They can rely on a current
+    certificate of title to evidence ownership of land.
+- term: transfer
+  definition: The passing of any estate or interest in land under the Real Property Act 1900 (NSW), whether
+    for valuable consideration or otherwise.
+- term: transferee
+  definition: The person to which the estate or interest is being transferred.
+- term: transferor
+  definition: The person transferring the estate or interest.
+- term: transmission
+  definition: The acquisition of title to or interest in land consequent on the death, will, intestacy
+    or bankruptcy of a proprietor.
+- term: transmission application
+  definition: An application for the transfer of title to or interest in land consequent on the death
+    of a sole proprietor or tenant in common following probate.
+- term: trustee
+  definition: The person who holds property on trust for another. The prime duty of a trustee is to carry
+    out the terms of the trust and preserve safely the trust property.
+- term: trustee in bankruptcy
+  definition: An official appointed to manage the affairs of a bankrupt (as regards a person).
+- term: unalienated Crown land
+  definition: Crown land under the care and control of the Minister Administering the Crown Lands Act
+    1989 (NSW) which is not subject of any tenure or resumption by a Government gazettal.
+- term: unanimous resolution
+  definition: A resolution at a duly convened general meeting of a community, precinct or neighbourhood
+    association passed without a vote being cast against it.
+- term: unregistered
+  definition: A notification on title about a dealing which has been lodged with NSW LRS but not yet been
+    registered. Most dealings are accepted and recorded within a few days of lodgment, but some may require
+    correction before they can be registered. In this case ‘requisitions’ are issued to the lodging party
+    pointing out the corrections required. The term applies to dealings or plans which have not been registered
+    with NSW LRS or put on public record.
+- term: utility lot
+  definition: A strata lot designated for a specific purpose such as garage, parking space or garden shed.
+    A utility lot restricted under section 63, Strata Schemes Development Act 2015 (NSW) is not available
+    for occupation.
+- term: vertical subdivision
+  definition: The subdivision of land into lots where boundaries extend from the centre of the earth through
+    the surface to infinity. The plan represents the parcel at the earth’s surface. See also ‘stratum
+    subdivision’.
+- term: vested remainder
+  definition: A remainder which is always ready to take effect in possession the moment the particular
+    estate on which it is expectant terminates.
+- term: vinculum
+  definition: A symbol in the form of an elongated reverse ‘S’ used in plans to show which parcels of
+    land forms part of the same lot or the continuance of a lot on the other side of a road, river, railway
+    and so on.
+- term: WAL
+  definition: Water Access Licence
+- term: will
+  definition: A disposition or declaration by which the person making it (the testator) provides for the
+    distribution or administration of property after their death.
+- term: writ
+  definition: In these directions means a writ of execution emanating from a court, which when registered
+    in the Register of Causes, Writs and Orders creates a charge on the property of the execution debtor
+    where the land is held under common law title. Where the land is held under the Real Property Act
+    1900 (NSW) the writ must be registered under that Act to have effect – it does not create an interest
+    in land but generally operates to prevent the registration of dealings for a period of three months.
+    However, there are exceptions, and this area of law is complex requiring detailed study.

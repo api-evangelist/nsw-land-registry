@@ -1,0 +1,62 @@
+generated: '2026-07-26'
+method: searched
+source: live anonymous requests against the NSW LRS status page API and the HLRV search proxy
+description: >-
+  Real, unedited response bodies captured from the two NSW Land Registry Services surfaces that
+  answer anonymously. Nothing here is synthesised: each file is the verbatim body a documented or
+  observed endpoint returned on 2026-07-26, saved so an agent or integrator can see the actual
+  response shape NSW LRS emits without having to call a registry that publishes no schema.
+examples:
+- file: nsw-land-registry-status-status.json
+  api: nsw-lrs-status-api
+  request: GET https://status.nswlrs.com.au/api/v2/status.json
+  status: 200
+  content_type: application/json
+  note: >-
+    Rollup status indicator for the whole NSW LRS estate. Documented endpoint on the NSW LRS status
+    page API reference at https://status.nswlrs.com.au/api.
+- file: nsw-land-registry-status-components.json
+  api: nsw-lrs-status-api
+  request: GET https://status.nswlrs.com.au/api/v2/components.json
+  status: 200
+  content_type: application/json
+  note: >-
+    The 27 published components and component groups NSW LRS reports on, including "API Service"
+    under Information Broker Services, ITS Services, DIIMS Services, HLRV, eCommerce and the
+    NSW LRS Connect and Online Portal groups. The component list is the closest public inventory
+    of the NSW LRS production systems.
+- file: nsw-land-registry-status-incidents-unresolved.json
+  api: nsw-lrs-status-api
+  request: GET https://status.nswlrs.com.au/api/v2/incidents/unresolved.json
+  status: 200
+  content_type: application/json
+  note: Empty incidents array captured while all systems were operational.
+- file: nsw-land-registry-status-scheduled-maintenances-upcoming.json
+  api: nsw-lrs-status-api
+  request: GET https://status.nswlrs.com.au/api/v2/scheduled-maintenances/upcoming.json
+  status: 200
+  content_type: application/json
+  note: Upcoming scheduled maintenance windows with their affected components.
+- file: nsw-land-registry-hlrv-msearch-response.json
+  api: nsw-lrs-hlrv-document-search-api
+  request: >-
+    POST https://api.lrsnative.com.au/hlrv/documents/_msearch with the ndjson body
+    {"preference":"api-evangelist-probe"} / {"query":{"match_all":{}},"size":1}
+  status: 200
+  content_type: application/json
+  note: >-
+    One document from the 7,160,622-document historical index, showing the real field set
+    (collectionId, collectionName, documentId, documentRenderingId, imageType, imageName,
+    bookAndNumber, scanTimestamp and the images array of JPEG2000 files with fileName, location,
+    imageId, imageStatus, seqNo and pixel dimensions). NSW LRS publishes no contract for this
+    endpoint and the HLRV terms of use prohibit scripted access; the example is recorded as
+    evidence of the surface, not as an invitation to automate it.
+- file: ../openapi/nsw-land-registry-hlrv-iiif-image-information.json
+  api: nsw-lrs-hlrv-iiif-image-api
+  request: >-
+    GET https://api.lrsnative.com.au/hlrv/iiif/2/eirOSD%2F0938-0939%2F0939_0937_0001.jp2/info.json
+  status: 200
+  content_type: application/json
+  note: >-
+    IIIF Image API 2.0 image information document harvested in the previous round; it is both an
+    example response and the self-describing contract for the image endpoint.

@@ -1,0 +1,51 @@
+generated: '2026-07-26'
+method: searched
+source: https://status.nswlrs.com.au/
+spec_type: none
+description: >-
+  NSW Land Registry Services publishes no AsyncAPI document and no event or streaming API for the
+  register. It does operate one real, publicly subscribable event surface: the NSW LRS status page
+  (Atlassian Statuspage) offers webhook notifications alongside email and SMS, so an integrator can
+  receive a callback whenever NSW LRS creates, updates or resolves an incident, or changes a
+  component status. Captured as a webhook catalogue because that is what exists; the event payload
+  schema is Statuspage's, not NSW LRS's, and NSW LRS documents none of it.
+webhooks:
+  subscribe_url: https://status.nswlrs.com.au/
+  subscribe_endpoint: POST https://status.nswlrs.com.au/subscriptions/webhook.json
+  subscribe_fields:
+  - {name: endpoint, description: the HTTPS URL NSW LRS will POST notifications to}
+  - {name: email, description: contact address for the webhook subscription}
+  protection: Google reCAPTCHA Enterprise on the subscription form
+  transport: HTTP POST callback
+  authentication: none published (Statuspage signs nothing by default on public page webhooks)
+  published_description: >-
+    "Get webhook notifications whenever NSW LRS creates an incident, updates an incident, resolves
+    an incident or changes a component status." — verbatim from https://status.nswlrs.com.au/,
+    fetched 2026-07-26.
+  events:
+  - name: incident.create
+    description: NSW LRS creates a new incident on the status page
+  - name: incident.update
+    description: NSW LRS posts an update to an open incident
+  - name: incident.resolve
+    description: NSW LRS resolves an incident
+  - name: component.status_change
+    description: >-
+      A published component changes status — the 27 components include Information Broker Services
+      and its "API Service" child, ITS Services, DIIMS Services, HLRV, NSW LRS Connect, the NSW LRS
+      Online Portal, eCommerce, Secure File Transfer and Addressing Services
+  affected_components_source: examples/nsw-land-registry-status-components.json
+polling_alternatives:
+- {url: 'https://status.nswlrs.com.au/api/v2/incidents/unresolved.json', format: json}
+- {url: 'https://status.nswlrs.com.au/api/v2/summary.json', format: json}
+- {url: 'https://status.nswlrs.com.au/history.rss', format: rss-2.0}
+- {url: 'https://status.nswlrs.com.au/history.atom', format: atom-1.0}
+absent:
+- No AsyncAPI 2.x or 3.x document exists on any NSW LRS host.
+- >-
+  No register event surface is published — there is no title-change, dealing-registered,
+  plan-registered or caveat-lodged notification available to the public. The nearest commercial
+  equivalents are the wholesale Property Alerts, Lease Notifications, Mortgage Insights and
+  Mortgage Verifications products, sold by emailing datasolutions@nswlrs.com.au with no published
+  delivery mechanism, schema or technical contract.
+- No Kafka, SSE, WebSocket or MQTT surface was found.

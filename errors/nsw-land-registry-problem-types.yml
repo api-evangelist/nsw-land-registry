@@ -1,0 +1,82 @@
+generated: '2026-07-26'
+method: probed
+source: >-
+  live requests against every reachable NSW LRS host on 2026-07-26; there is no OpenAPI to derive
+  4xx/5xx responses from and no published error reference
+format: proprietary
+detail: >-
+  NSW Land Registry Services publishes no error reference and no error taxonomy. Nothing in the
+  estate returns application/problem+json, so RFC 9457 does not apply. The catalogue below is what
+  the surfaces actually returned when probed, recorded so an integrator knows the failure shapes
+  in advance.
+problems:
+- status: 400
+  surface: HLRV document search proxy
+  request: POST https://api.lrsnative.com.au/hlrv/documents/_search
+  media_type: application/json
+  body: '{"message":"Invalid Request: TypeError: query.includes is not a function"}'
+  title: Single-search route rejects standard Elasticsearch query bodies
+  cause: >-
+    The proxy leaks a Node TypeError from its own request handler. The single-search route is not
+    usable; only /_msearch with an ndjson body answers.
+  remediation: Use POST /hlrv/documents/_msearch with newline-delimited JSON.
+- status: 400
+  surface: api.lrsnative.com.au root
+  request: GET https://api.lrsnative.com.au/openapi.json and other root paths
+  media_type: text/xml
+  title: Unrouted path
+  cause: >-
+    Paths outside /hlrv/ return an XML NotFound envelope from the edge. Every /.well-known/ probe
+    on this host returned 400.
+- status: 403
+  surface: NSW LRS broker API estate
+  request: GET https://api.nswlrs.com.au/ and every path probed beneath it
+  media_type: application/json
+  body: '{"message":"Forbidden"}'
+  headers:
+  - 'x-amzn-errortype: ForbiddenException'
+  - x-amz-apigw-id
+  title: AWS API Gateway forbidden
+  cause: >-
+    A private, licensed API estate exists behind api.nswlrs.com.au — the status page publishes an
+    "API Service" component under Information Broker Services — but no route, no key issuance and
+    no documentation is public.
+  remediation: >-
+    Obtain an information broker licence agreement from NSW LRS
+    (https://nswlrs.com.au/services/record-searches/how-to-find-an-information-broker) or buy the
+    data through an authorised broker.
+- status: 403
+  surface: hlrv.nswlrs.com.au
+  request: GET https://hlrv.nswlrs.com.au/openapi.json and /.well-known/* probes
+  title: CDN denies unknown paths
+  cause: The HLRV single-page app host serves only its own bundle routes.
+- status: 404
+  surface: nswlrs.com.au
+  request: GET https://nswlrs.com.au/openapi.json, /llms.txt, /.well-known/*
+  title: Not found
+  cause: >-
+    The marketing site is a Next.js App Router application with a 104-URL sitemap and no developer
+    surface. Note that it also returns 404 to a default curl user agent on valid pages and 200 with
+    a browser user agent.
+- status: 500
+  surface: HLRV lot search
+  request: POST https://api.lrsnative.com.au/hlrv/lotsearch/search
+  media_type: text/plain
+  body: Internal Server Error
+  title: Lot search route errors on any body
+  cause: >-
+    GET on the same path returns "Cannot GET /hlrv/lotsearch/search". The route is referenced by
+    the HLRV client but does not answer usefully to an external caller.
+- status: 503
+  surface: HLRV document index root
+  request: GET https://api.lrsnative.com.au/hlrv/documents
+  media_type: text/html
+  body: 503 Service Temporarily Unavailable (nginx)
+  title: Index root not exposed
+  cause: Only the _msearch child route is routed; the index root is closed at the reverse proxy.
+notes:
+- No error is documented by NSW LRS; every entry here is an observation, not a contract.
+- No retry-after, rate-limit or correlation-id header accompanied any error response.
+- >-
+  The HLRV terms of use prohibit scripted access, so error handling against those routes is a
+  compliance question before it is an engineering one.

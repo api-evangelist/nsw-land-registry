@@ -489,7 +489,7 @@ findings:
   summary: |
     NSW Land Registry Services publishes no API. It has no developer portal, no
     developer or docs subdomain, no OpenAPI or Swagger document, no SDK, no CLI, no
-    Postman workspace, no GitHub organization, no webhook catalogue and no published
+    Postman workspace, no GitHub organization and no published
     authentication scheme. Access to the Torrens Title Register is licensed, not
     opened: "Only an information broker we've authorised can access our records",
     and brokers reach it "through an official licence agreement with NSW LRS".
@@ -565,3 +565,56 @@ actions:
     LandXML vocabulary now mandatory for digital plan lodgment. Two APIs are listed
     in apis.yml, both verified live and anonymous, both explicitly recorded as
     observed surfaces rather than offered developer products.
+
+enrichment:
+- date: '2026-07-26'
+  round: 2
+  method: search + probe + derive
+  summary: >-
+    The second pass re-ran contract discovery against every host and found one thing the first pass
+    missed: NSW LRS operates a documented, anonymously callable API. The status page at
+    status.nswlrs.com.au is an Atlassian Statuspage (page id jcfp2nmyt2j4) with the public v2 API
+    enabled and an endpoint reference published at https://status.nswlrs.com.au/api. All seven
+    documented routes answered HTTP 200 with no credential, incident history is published as RSS
+    2.0 and Atom 1.0, and the page offers webhook notifications on incident create/update/resolve
+    and component status change. Its 27 components are the closest public inventory of NSW LRS
+    production systems, and one of them — "API Service" under Information Broker Services —
+    confirms from the registry's own reporting that a production API estate sits behind the broker
+    licence at api.nswlrs.com.au, which still returns 403 ForbiddenException on every path. The
+    pass also harvested the published 257-term NSW LRS glossary as a controlled vocabulary, the
+    dated LRS Connect release schedule and announcements feed as a changelog, and real example
+    response bodies from the status API and the HLRV search proxy. Both HLRV surfaces were
+    re-verified live and still answer anonymously.
+  found:
+  - Documented public API — NSW LRS status page API v2 (added as a third apis[] entry)
+  - Webhook event surface (status page incident and component notifications)
+  - Published vocabulary — 257 glossary terms harvested verbatim
+  - Dated changelog — LRS Connect release schedule plus the announcements feed
+  - Operational transparency — the daily current-processing-times page, published in place of an SLA
+  still_absent:
+  - OpenAPI, Swagger, AsyncAPI, GraphQL SDL, OData $metadata, MCP manifest
+  - Any /.well-known/ document on any of the six hosts (0 of 42 probes returned a document)
+  - security.txt, vulnerability disclosure programme, trust centre, published certifications
+  - First-party SDK or package in any registry (npm and PyPI searches returned nothing)
+  - CLI, Postman workspace, GitHub organization, sandbox, OAuth scopes
+  artifacts:
+  - vocabulary/nsw-land-registry-glossary.yml
+  - changelog/nsw-land-registry-changelog.yml
+  - conformance/nsw-land-registry-conformance.yml
+  - conventions/nsw-land-registry-conventions.yml
+  - errors/nsw-land-registry-problem-types.yml
+  - lifecycle/nsw-land-registry-lifecycle.yml
+  - authentication/nsw-land-registry-authentication.yml
+  - data-model/nsw-land-registry-data-model.yml
+  - asyncapi/nsw-land-registry-status-webhooks.yml
+  - well-known/nsw-land-registry-well-known.yml
+  - security/nsw-land-registry-domain-security.yml
+  - llms/nsw-land-registry-llms.txt
+  - examples/_index.yml
+  not_authored:
+  - >-
+    No MCP server and no agent skills were generated. The HLRV terms of use prohibit "any device,
+    software or routine to abuse the service of HLRV or emulate human interaction and operation",
+    so packaging those surfaces as agent tooling would have been authoring an integration the
+    provider forbids.
+  - No OpenAPI was written for any surface; nothing was invented.

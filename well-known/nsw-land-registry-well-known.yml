@@ -1,0 +1,71 @@
+generated: '2026-07-26'
+method: probed
+source: live HTTP probes on 2026-07-26
+description: >-
+  The /.well-known/ discovery surface across every NSW Land Registry Services host. Nothing is
+  published: no security.txt, no OpenID Connect or OAuth discovery, no api-catalog, no ai-plugin
+  and no llms.txt on any host. Recorded as evidence — the absence is the finding, and no WellKnown
+  pointer is wired in apis.yml because no document exists to point at.
+hosts:
+- host: https://nswlrs.com.au
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /openapi.json, status: 404}
+  - {path: /swagger.json, status: 404}
+  - {path: /robots.txt, status: 200, note: 'User-agent: * / Allow: / with one sitemap reference'}
+  - {path: /sitemap.xml, status: 200, note: 104 URLs, none developer or API related}
+- host: https://api.nswlrs.com.au
+  note: AWS API Gateway; every path returns ForbiddenException
+  documents:
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /.well-known/oauth-authorization-server, status: 403}
+  - {path: /.well-known/api-catalog, status: 403}
+  - {path: /llms.txt, status: 403}
+  - {path: /openapi.json, status: 403}
+  - {path: /swagger.json, status: 403}
+- host: https://api.lrsnative.com.au
+  note: Paths outside /hlrv/ return an XML NotFound envelope with HTTP 400
+  documents:
+  - {path: /.well-known/security.txt, status: 400}
+  - {path: /.well-known/openid-configuration, status: 400}
+  - {path: /.well-known/oauth-authorization-server, status: 400}
+  - {path: /.well-known/api-catalog, status: 400}
+  - {path: /llms.txt, status: 400}
+  - {path: /openapi.json, status: 400}
+  - {path: /swagger.json, status: 400}
+- host: https://hlrv.nswlrs.com.au
+  documents:
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /.well-known/oauth-authorization-server, status: 403}
+  - {path: /.well-known/api-catalog, status: 403}
+  - {path: /llms.txt, status: 403}
+  - {path: /openapi.json, status: 403}
+- host: https://connect.nswlrs.com.au
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /openapi.json, status: 404}
+- host: https://online.nswlrs.com.au
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /openapi.json, status: 404}
+summary:
+  documents_found: 0
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  api_catalog: false
+  llms_txt: false

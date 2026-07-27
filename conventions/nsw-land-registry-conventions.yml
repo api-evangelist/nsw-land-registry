@@ -1,0 +1,111 @@
+generated: '2026-07-26'
+method: probed
+source: >-
+  live requests against the three reachable NSW LRS surfaces plus the published status page API
+  reference; no OpenAPI exists to derive from
+description: >-
+  Cross-cutting request and response semantics for the NSW Land Registry Services surfaces that
+  actually answer. There is no single house style: each surface inherits the conventions of the
+  product it is built on — Atlassian Statuspage for status, IIIF Image API 2.0 for scanned images,
+  and an Elasticsearch multi-search proxy for historical document search. NSW LRS itself publishes
+  no API design guide, no versioning policy for these endpoints and no request-id or rate-limit
+  contract.
+authentication:
+  style: none on the public surfaces, commercial licence for register data
+  detail: see authentication/nsw-land-registry-authentication.yml
+idempotency:
+  supported: false
+  detail: >-
+    No idempotency key is documented or accepted anywhere. Every publicly reachable NSW LRS
+    endpoint is read-only (GET, or POST used as a search verb), so there is no write contract that
+    would need one. Register writes happen inside the ELNO workspace model under the Electronic
+    Conveyancing National Law, not over a public API.
+pagination:
+- surface: HLRV document search proxy
+  style: elasticsearch-from-size
+  request_fields:
+  - size
+  - from
+  response_fields:
+  - hits.total
+  - hits.max_score
+  - hits.hits
+  evidence: >-
+    POST /hlrv/documents/_msearch accepts a standard Elasticsearch query body; a {"size":2} probe
+    returned hits.total 7160622 with two hits. Deep paging behaviour is unpublished.
+- surface: NSW LRS status page API
+  style: none
+  detail: >-
+    /api/v2/incidents.json and /api/v2/scheduled-maintenances.json return the full collection in
+    one document (163 KB and 366 KB respectively on 2026-07-26); no page or cursor parameter is
+    documented.
+request_format:
+- surface: HLRV document search proxy
+  content_type: application/x-ndjson
+  detail: >-
+    _msearch takes newline-delimited JSON — a header line such as {"preference":"probe"} followed
+    by the query line, and the body must end with a newline. POST /hlrv/documents/_search (the
+    single-search sibling) returns HTTP 400 {"message":"Invalid Request: TypeError: query.includes
+    is not a function"}, so the multi-search route is the only usable one.
+- surface: HLRV IIIF Image API
+  content_type: n/a
+  detail: >-
+    Parameters are carried in the URI path, not the query string, per IIIF Image API 2.1:
+    /{identifier}/{region}/{size}/{rotation}/{quality}.{format}, plus /{identifier}/info.json for
+    the image information document. Identifiers are the URL-encoded JPEG2000 location + "/" +
+    fileName taken from the search response (for example eirOSD%2F0938-0939%2F0939_0937_0001.jp2).
+    Level 2 compliance means regionByPx, regionByPct, regionSquare, sizeByW/H/Pct/Wh,
+    rotationArbitrary, mirroring and the bitonal/default/gray/color qualities are all available.
+- surface: NSW LRS status page API
+  content_type: application/json
+  detail: Plain GET, no parameters, no request body.
+response_format:
+  media_types:
+  - application/json
+  - application/json;charset=utf-8
+  - image/jpeg
+  - application/rss+xml
+  - application/atom+xml
+  - text/xml
+  envelope: >-
+    No shared envelope. The status API returns Statuspage v2 documents keyed by page/status/
+    components/incidents/scheduled_maintenances with ISO-8601 timestamps in Australia/Sydney
+    offset form. The search proxy returns raw Elasticsearch responses under a responses array.
+    The IIIF endpoint returns JSON-LD image information (@context http://iiif.io/api/image/2/
+    context.json) or a binary derivative.
+field_expansion:
+  supported: false
+metadata:
+  supported: false
+request_tracing:
+  header: null
+  detail: >-
+    No request-id header is returned by the HLRV surfaces. api.nswlrs.com.au returns AWS API
+    Gateway's x-amz-apigw-id and x-amzn-errortype on its 403s, which is platform behaviour rather
+    than a published tracing contract.
+versioning:
+  scheme: uri-path (per surface, inherited from the underlying product)
+  current:
+  - status API v2 (/api/v2/...)
+  - IIIF Image API 2 (/hlrv/iiif/2/...)
+  - ICSM ePlan Cadastral Information File enumerated types 4.0 (XSD)
+  - NSW Participation Rules version 7
+  policy_url: null
+  detail: NSW LRS publishes no versioning or deprecation policy for any of these surfaces.
+errors:
+  format: proprietary
+  detail: see errors/nsw-land-registry-problem-types.yml — no RFC 9457 problem+json anywhere
+rate_limiting:
+  documented: false
+  headers: []
+  detail: >-
+    No rate-limit headers were returned by any probed endpoint and no limits are published. The
+    HLRV terms of use instead prohibit programmatic access outright, clause 3.6 forbidding "any
+    device, software or routine to abuse the service of HLRV or emulate human interaction and
+    operation".
+cross_references:
+  authentication: authentication/nsw-land-registry-authentication.yml
+  errors: errors/nsw-land-registry-problem-types.yml
+  lifecycle: lifecycle/nsw-land-registry-lifecycle.yml
+  conformance: conformance/nsw-land-registry-conformance.yml
+  vocabulary: vocabulary/nsw-land-registry-glossary.yml

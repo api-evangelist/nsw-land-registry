@@ -1,0 +1,171 @@
+generated: '2026-07-26'
+method: searched
+source: https://nswlrs.com.au/about-us/education-hub/lrs-connect-release-schedule
+also:
+- https://nswlrs.com.au/about-us/announcements
+description: >-
+  NSW Land Registry Services publishes no API changelog because it publishes no API programme. It
+  does publish two real dated change surfaces: the LRS Connect release schedule, which lists
+  per-item product changes by delivery date, and the announcements feed, which carries the
+  regulatory and operational changes that actually break integrations in this market (mandates,
+  fee schedules, technical upgrade dates). Both are captured here; the live pages remain the
+  source of truth.
+scheme: dated-release (no semantic version is published for any NSW LRS system)
+current_version: null
+entries:
+- date: '2026-07-09'
+  title: LRS Connect release — delivered 9 July 2026
+  source: https://nswlrs.com.au/about-us/education-hub/lrs-connect-release-schedule
+  breaking: false
+  changes:
+  - component: Administration Sheet
+    type: Bug
+    detail: >-
+      Fixed an issue where a specific long plan heading was truncated or displayed incorrectly
+      across Administration Form and Section 88B Instrument PDFs
+  - component: Administration Sheet
+    type: Bug
+    detail: >-
+      Fixed an issue where the Schedule of U.E. did not populate Lot information correctly for
+      certain community plans which had a previous Replacement/Additional Sheet lodgment
+  - component: Administration Sheet
+    type: Bug
+    detail: >-
+      Fixed an issue where under very specific conditions, some users could not save the workspace
+      when creating Section 88B Instruments involving the release of easements only
+  - component: Plan Workspace
+    type: Usability
+    detail: >-
+      Updated the electronic signature statement to provide clearer guidance on the electronic
+      consent process
+  - component: Plan Workspace
+    type: Usability
+    detail: >-
+      Updated proposed date question to clarify that the date entered should be the date the plan
+      is likely to be signed in order to determine if the plan will be subject to the Digital Forms
+      mandate
+  - component: Digital Plan Builder
+    type: Usability
+    detail: >-
+      Updated the failed translation message link to direct users to the correct layering
+      requirements information
+  - component: Invoices
+    type: Functionality
+    detail: Updated the refresh button to correctly refresh the invoice screen
+- date: '2026-06-19'
+  title: LRS Connect release — delivered 19 June 2026
+  source: https://nswlrs.com.au/about-us/education-hub/lrs-connect-release-schedule
+  breaking: false
+  changes:
+  - component: Administration Sheet
+    type: Usability
+    detail: Dynamic rows for street and unit entitlements
+  - component: Administration Sheet
+    type: Bug
+    detail: Prevent address/text from truncating or disappearing on Admin Form
+  - component: Administration Sheet
+    type: Bug
+    detail: Middle name drops off Admin Sheet when printed (visible in workspace)
+  - component: Administration Sheet
+    type: Functionality
+    detail: Pre-fill Owner, Council and Mortgagee names from title references on Signatures screen
+  - component: Administration Sheet
+    type: Cosmetic
+    detail: >-
+      Diagonal 'cross out' when Crown Land NSW / Western Lands / Subdivision Certificate section
+      not used
+  - component: Section 88B Instrument
+    type: Functionality
+    detail: Pre-fill Owner, Council and Mortgagee names from title references on Signatures screen
+  - component: General / Platform
+    type: Functionality
+    detail: Lodgment summary to display surveyor note added at time of lodgment
+  - component: General / Platform
+    type: Bug
+    detail: Bug causing intermittent crashing of Forms & Lodgment Details screen
+  - component: Administration Sheet & Section 88B Instrument
+    type: Cosmetic
+    detail: Capitalisation and case sensitivity - preserve text formatting as entered
+  - component: Administration Sheet & Section 88B Instrument
+    type: Usability
+    detail: >-
+      Add execution blocks for standard stakeholders - Sydney Water, Endeavour Energy, Essential
+      Energy, Ausgrid
+  - component: Section 88B Instrument
+    type: Functionality
+    detail: >-
+      Add 'Select Each Lot Except' / 'Every Other Lot Except' options in Burdened/Benefited Lots
+      dropdown
+  - component: Administration Sheet
+    type: Usability
+    detail: Extend timeout - prompt user if still active instead of auto-logout after 15 min
+  - component: Section 88B Instrument
+    type: Functionality
+    detail: Upload burdened and benefited lots via CSV instead of manually selecting in Connect
+  - component: Administration Sheet
+    type: Data / Integration
+    detail: >-
+      Locality data to match CRE data check on parcel land details, and pick up second parish name
+  - component: Administration Sheet
+    type: Cosmetic
+    detail: Plan heading appearing on incorrect sheet rather than correct position / overflows
+  - component: General / Platform
+    type: Functionality
+    detail: View and respond to requisitions directly within LRS Connect
+  - component: General / Platform
+    type: Usability
+    detail: >-
+      On CP subsequent stage plans, enhance UE 'Update Note' to allow date to be entered later
+  - component: Administration Sheet
+    type: Usability
+    detail: >-
+      Add a section to enable user to input exemptions for their case. LRS Connect will continue to
+      capture any selected exemptions, enabling the Validation Service to be configured
+      appropriately for Mandate 2B (Digital Plan Data).
+  - component: Administration Sheet
+    type: Functionality
+    detail: >-
+      Separate 'survey completion date' field from 'plan signing date' field on Administration
+      Sheet, following confirmation by ORG, Spatial Services and LRS that surveyors may record a
+      "Date of Fieldwork Completion" in addition to the survey date
+  - component: Section 88B Instrument
+    type: Functionality
+    detail: >-
+      Improve Section 88B Instrument terms formatting (pasted text, grammar, inverted commas),
+      addressed through the new "Terms Upload" feature
+announcements:
+  url: https://nswlrs.com.au/about-us/announcements
+  subscribe: https://info.nswlrs.com.au/NSW-LRS-Mailing-List-Subscribe.html
+  detail: >-
+    Dated announcement feed; the entries below are the ones that change how the register is
+    reached, harvested 2026-07-26.
+  recent:
+  - date: '2026-07-23'
+    title: Building our capacity on LRS Connect
+  - date: '2026-07-01'
+    title: The Digital Forms mandate is now in effect
+  - date: '2026-07-01'
+    title: 'New regulated customer fees: 1 July 2026'
+  - date: '2026-06-04'
+    title: Digital Forms mandate coming 1 July 2026
+  - date: '2026-05-29'
+    title: NSW LRS office relocation
+  - date: '2026-04-02'
+    title: NSW LRS announces new CEO
+  - date: '2025-12-12'
+    title: Completing the transition to SSIR 2024
+  - date: '2025-12-02'
+    title: NSW Digital Plans reform update
+  - date: '2025-10-27'
+    title: Upgrades to electronic dealing forms coming 10 November 2025
+  - date: '2025-09-11'
+    title: Commencement of Surveying and Spatial Information Regulation 2024
+  - date: '2025-09-03'
+    title: 'New regulated customer fees: 1 July 2025'
+  - date: '2025-08-21'
+    title: Changes to Lodgment Rules require 100% online plan lodgment from 1 July 2025
+feedback_channel:
+  email: connect@nswlrs.com.au
+  detail: >-
+    The release schedule page invites enhancement requests by email and via the LRS Connect
+    Enhancement Request Form, reviewed as part of a continuous improvement process.

@@ -1,0 +1,167 @@
+generated: '2026-07-26'
+method: derived
+source: >-
+  examples/nsw-land-registry-hlrv-msearch-response.json,
+  openapi/nsw-land-registry-hlrv-iiif-image-information.json,
+  examples/nsw-land-registry-status-components.json,
+  https://nswlrs.com.au/services/record-searches/about-the-torrens-title-register
+description: >-
+  The entity graph implied by the NSW Land Registry Services surfaces that answer. There is no
+  published schema for any of them, so every field below was read off a real response captured on
+  2026-07-26. The historical-records model is the useful one: it shows exactly how a search hit is
+  turned into an image request, which is the only end-to-end join NSW LRS leaves reachable.
+identifiers:
+- name: folio identifier
+  domain: Torrens Title Register
+  format: <lot>/<plan> — for example 1/12345 for Lot 1 in Deposited Plan 12345
+  detail: >-
+    The primary key of NSW land. Derived from lot and plan number and documented at
+    https://nswlrs.com.au/services/record-searches/about-the-torrens-title-register. No Universal
+    Property Identifier is used. Register data keyed on the folio is broker-licensed and not
+    reachable through any public surface.
+- name: IIIF image identifier
+  domain: HLRV image service
+  format: '{location}/{fileName} URL-encoded — for example eirOSD%2F0938-0939%2F0939_0937_0001.jp2'
+  detail: >-
+    Constructed by the HLRV client by joining the location and fileName of an images[] element from
+    a search hit. This is the join between the search index and the image service.
+- name: bookAndNumber
+  domain: General Register of Deeds
+  format: <book>-<number> — for example 939-937
+  detail: The citation form for Old System deeds, echoed in imageName as "BK 939 937".
+entities:
+- name: Collection
+  surface: HLRV document search proxy
+  fields:
+  - {name: collectionId, type: integer}
+  - {name: collectionName, type: string, example: General Register of Deeds (Old System Deeds)}
+  relationships:
+  - {type: has_many, target: Document, via: collectionId}
+- name: Document
+  surface: HLRV document search proxy
+  index: hlrv/documents
+  count: 7160622
+  fields:
+  - {name: documentId, type: integer, role: primary_key}
+  - {name: documentRenderingId, type: integer}
+  - {name: collectionId, type: integer, role: foreign_key}
+  - {name: collectionName, type: string}
+  - {name: imageType, type: string, example: JPEG2000}
+  - {name: imageName, type: string, example: BK 939 937}
+  - {name: bookAndNumber, type: string, example: 939-937}
+  - {name: scanTimestamp, type: string, format: 'YYYY-MM-DD HH:MM:SS'}
+  - {name: yearFrom, type: integer}
+  - {name: yearTo, type: integer}
+  - {name: images, type: array}
+  relationships:
+  - {type: belongs_to, target: Collection, via: collectionId}
+  - {type: has_many, target: DocumentImage, via: images}
+- name: DocumentImage
+  surface: HLRV document search proxy
+  fields:
+  - {name: imageId, type: integer, role: primary_key}
+  - {name: fileName, type: string, example: 0939_0937_0001.jp2}
+  - {name: location, type: string, example: eirOSD/0938-0939}
+  - {name: imageStatus, type: string, example: VISIBLE}
+  - {name: imageUpdated, type: string, format: 'YYYY-MM-DD HH:MM:SS'}
+  - {name: seqNo, type: integer}
+  - {name: fileSize, type: integer}
+  - {name: widthInPixel, type: integer}
+  - {name: heightInPixel, type: integer}
+  - {name: width, type: integer}
+  - {name: height, type: integer}
+  relationships:
+  - {type: belongs_to, target: Document, via: documentId}
+  - {type: has_one, target: ImageInformation, via: 'URL-encoded location + "/" + fileName'}
+- name: ImageInformation
+  surface: HLRV IIIF Image API
+  spec: IIIF Image API 2.0, compliance level 2
+  fields:
+  - {name: '@id', type: string}
+  - {name: '@context', type: string, example: 'http://iiif.io/api/image/2/context.json'}
+  - {name: protocol, type: string, example: 'http://iiif.io/api/image'}
+  - {name: width, type: integer}
+  - {name: height, type: integer}
+  - {name: sizes, type: array, note: six pyramid sizes}
+  - {name: tiles, type: array, note: 'tile geometry with scaleFactors [1,2,4,8,16,32]'}
+  - {name: profile, type: array, note: level2 profile plus formats, qualities and supports}
+  relationships:
+  - {type: has_many, target: ImageDerivative, via: 'IIIF URI template'}
+- name: ImageDerivative
+  surface: HLRV IIIF Image API
+  addressing: /{identifier}/{region}/{size}/{rotation}/{quality}.{format}
+  formats: [jpg, tif, gif, png]
+  qualities: [bitonal, default, gray, color]
+- name: StatusPage
+  surface: NSW LRS status page API
+  fields:
+  - {name: id, type: string, example: jcfp2nmyt2j4}
+  - {name: name, type: string}
+  - {name: url, type: string}
+  - {name: time_zone, type: string, example: Australia/Sydney}
+  - {name: updated_at, type: string, format: iso8601}
+  relationships:
+  - {type: has_many, target: Component, via: page_id}
+  - {type: has_many, target: Incident, via: page_id}
+  - {type: has_many, target: ScheduledMaintenance, via: page_id}
+- name: Component
+  surface: NSW LRS status page API
+  count: 27
+  fields:
+  - {name: id, type: string}
+  - {name: name, type: string}
+  - {name: status, type: string, enum_example: operational}
+  - {name: group, type: boolean}
+  - {name: group_id, type: string}
+  - {name: components, type: array, note: child component ids on a group}
+  - {name: position, type: integer}
+  - {name: created_at, type: string, format: iso8601}
+  - {name: updated_at, type: string, format: iso8601}
+  relationships:
+  - {type: belongs_to, target: StatusPage, via: page_id}
+  - {type: has_many, target: Component, via: group_id}
+- name: Incident
+  surface: NSW LRS status page API
+  fields:
+  - {name: id, type: string}
+  - {name: name, type: string}
+  - {name: status, type: string, enum_example: resolved}
+  - {name: impact, type: string, enum_example: minor}
+  - {name: shortlink, type: string}
+  - {name: created_at, type: string, format: iso8601}
+  - {name: resolved_at, type: string, format: iso8601}
+  - {name: incident_updates, type: array}
+  - {name: components, type: array}
+  relationships:
+  - {type: has_many, target: IncidentUpdate, via: incident_updates}
+  - {type: has_many, target: Component, via: components}
+- name: ScheduledMaintenance
+  surface: NSW LRS status page API
+  fields:
+  - {name: id, type: string}
+  - {name: name, type: string}
+  - {name: scheduled_for, type: string, format: iso8601}
+  - {name: scheduled_until, type: string, format: iso8601}
+  - {name: status, type: string}
+  - {name: incident_updates, type: array}
+  relationships:
+  - {type: has_many, target: Component, via: components}
+joins:
+- name: search-hit to image
+  path: >-
+    POST /hlrv/documents/_msearch -> hits.hits[]._source.images[] -> urlencode(location + "/" +
+    fileName) -> GET /hlrv/iiif/2/{identifier}/info.json -> GET
+    /hlrv/iiif/2/{identifier}/{region}/{size}/{rotation}/{quality}.{format}
+  note: >-
+    The only complete public join in the NSW LRS estate. Recorded as an observed data model; the
+    HLRV terms of use prohibit scripted or emulated access, so this path is documentation of how
+    the viewer works, not a sanctioned integration route.
+absent:
+- >-
+  No entity model is published for the Torrens Title Register itself (folio, dealing, plan,
+  caveat, mortgage, lease). Those objects are reachable only through a licensed information broker
+  or an ELNO workspace, and their schemas are not public.
+- >-
+  The register's own vocabulary is published as prose, not as a schema: 257 defined terms in
+  vocabulary/nsw-land-registry-glossary.yml, and the ICSM ePlan CIF 4.0 XSD in openapi/ for plan
+  lodgment.

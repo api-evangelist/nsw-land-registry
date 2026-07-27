@@ -1,0 +1,93 @@
+{
+    "responses": [
+        {
+            "took": 26,
+            "timed_out": false,
+            "_shards": {
+                "total": 3,
+                "successful": 3,
+                "skipped": 0,
+                "failed": 0
+            },
+            "hits": {
+                "total": 7160622,
+                "max_score": 1.0,
+                "hits": [
+                    {
+                        "_index": "bcf4f6ce-fb7a-4f0c-b69a-91c1f108eb17",
+                        "_type": "document",
+                        "_id": "6310937",
+                        "_score": 1.0,
+                        "_source": {
+                            "collectionId": 64,
+                            "collectionName": "General Register of Deeds (Old System Deeds)",
+                            "documentId": 6310937,
+                            "documentRenderingId": 17756372,
+                            "imageType": "JPEG2000",
+                            "yearFrom": 0,
+                            "yearTo": 0,
+                            "imageName": "BK 939 937",
+                            "scanTimestamp": "2016-11-09 07:53:45",
+                            "bookAndNumber": "939-937",
+                            "images": [
+                                {
+                                    "fileName": "0939_0937_0001.jp2",
+                                    "fileSize": 2380,
+                                    "height": 118,
+                                    "heightInPixel": 3507,
+                                    "location": "eirOSD/0938-0939",
+                                    "imageId": 38652613,
+                                    "imageUpdated": "2016-11-09 22:03:31",
+                                    "imageStatus": "VISIBLE",
+                                    "seqNo": 1,
+                                    "widthInPixel": 5443,
+                                    "width": 118
+                                },
+                                {
+                                    "fileName": "0939_0937_0002.jp2",
+                                    "fileSize": 2370,
+                                    "height": 118,
+                                    "heightInPixel": 3499,
+                                    "location": "eirOSD/0938-0939",
+                                    "imageId": 38652614,
+                                    "imageUpdated": "2016-11-09 22:03:34",
+                                    "imageStatus": "VISIBLE",
+                                    "seqNo": 2,
+                                    "widthInPixel": 5433,
+                                    "width": 118
+                                },
+                                {
+                                    "fileName": "0939_0937_0003.jp2",
+                                    "fileSize": 2370,
+                                    "height": 118,
+                                    "heightInPixel": 3487,
+                                    "location": "eirOSD/0938-0939",
+                                    "imageId": 38652615,
+                                    "imageUpdated": "2016-11-09 22:03:37",
+                                    "imageStatus": "VISIBLE",
+                                    "seqNo": 3,
+                                    "widthInPixel": 5453,
+                                    "width": 118
+                                },
+                                {
+                                    "fileName": "0939_0937_0004.jp2",
+                                    "fileSize": 2361,
+                                    "height": 118,
+                                    "heightInPixel": 3475,
+                                    "location": "eirOSD/0938-0939",
+                                    "imageId": 38652616,
+                                    "imageUpdated": "2016-11-09 22:03:40",
+                                    "imageStatus": "VISIBLE",
+                                    "seqNo": 4,
+                                    "widthInPixel": 5451,
+                                    "width": 118
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "status": 200
+        }
+    ]
+}

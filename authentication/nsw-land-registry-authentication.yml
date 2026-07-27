@@ -1,0 +1,87 @@
+generated: '2026-07-26'
+method: probed
+source: >-
+  live anonymous probes of every reachable NSW LRS host plus the published access statements at
+  nswlrs.com.au; no OpenAPI securitySchemes exist to derive from
+docs: https://nswlrs.com.au/services/record-searches/how-to-find-an-information-broker
+summary:
+  types:
+  - none
+  - contract-gated
+  - session-login
+  api_key_in: []
+  oauth2_flows: []
+  note: >-
+    NSW Land Registry Services publishes no authentication documentation, issues no API keys and
+    operates no OAuth or OpenID Connect surface that can be reached anonymously. Authentication in
+    this estate is either absent (the two undocumented public read surfaces and the status page
+    API) or replaced entirely by a commercial licence: register access is authorised by a broker
+    licence agreement or by ELNO subscriber registration, not by a credential a developer can
+    obtain online.
+schemes:
+- name: none
+  type: none
+  surface: NSW LRS status page API
+  host: https://status.nswlrs.com.au/api/v2
+  documented: true
+  evidence: >-
+    GET /api/v2/status.json, /api/v2/summary.json, /api/v2/components.json,
+    /api/v2/incidents.json and /api/v2/scheduled-maintenances.json all returned HTTP 200 with
+    Content-Type application/json and no credential of any kind on 2026-07-26. The published API
+    reference at https://status.nswlrs.com.au/api documents the endpoints with plain curl examples
+    and describes no authentication step.
+- name: none
+  type: none
+  surface: HLRV IIIF Image API
+  host: https://api.lrsnative.com.au/hlrv/iiif/2
+  documented: false
+  evidence: >-
+    The Cantaloupe endpoint root, an info.json and a /full/200,/0/default.jpg derivative all
+    returned HTTP 200 anonymously on 2026-07-26. No key issuance, no token, no rate-limit header.
+- name: x-portal-token
+  type: apiKey
+  in: header
+  parameter_name: x-portal-token
+  surface: HLRV document search proxy
+  host: https://api.lrsnative.com.au/hlrv/documents
+  documented: false
+  enforced: false
+  evidence: >-
+    The HLRV single-page application configures its ReactiveSearch client with an x-portal-token
+    header, but POST /hlrv/documents/_msearch returned HTTP 200 with hits.total 7160622 on
+    2026-07-26 with no header supplied. The header exists in the client, is not enforced at the
+    edge, and is not documented anywhere by NSW LRS.
+- name: broker-licence
+  type: contract
+  surface: NSW LRS broker API estate (api.nswlrs.com.au)
+  host: https://api.nswlrs.com.au
+  documented: false
+  evidence: >-
+    Every path probed on api.nswlrs.com.au returned HTTP 403 {"message":"Forbidden"} with
+    x-amzn-errortype ForbiddenException from AWS API Gateway, including /, /v1, /health, /docs,
+    /openapi.json and /.well-known/openid-configuration. The status page publishes an "API Service"
+    component under the Information Broker Services group, confirming a production API exists for
+    licensed brokers. Access is granted by an official licence agreement: "Only an information
+    broker we've authorised can access our records."
+- name: elno-subscriber
+  type: contract
+  surface: Lodgment and dealing writes
+  documented: true
+  evidence: >-
+    Writes to the Torrens Title Register are lodged through an Electronic Lodgment Network Operator
+    (PEXA or Sympli) under the Electronic Conveyancing National Law; subscribers are registered
+    under the NSW Participation Rules and examined under NSW LRS's delegated section 33 ECNL
+    compliance authority. No direct machine credential is issued by NSW LRS.
+- name: portal-login
+  type: session
+  surface: NSW LRS Connect / NSW LRS Online Portal
+  host: https://connect.nswlrs.com.au
+  documented: true
+  evidence: >-
+    connect.nswlrs.com.au is a login-gated OutSystems application for lodging parties;
+    online.nswlrs.com.au is an IBM WebSphere Portal offering web-form searches. Both are
+    human-interactive sessions with no published programmatic authentication.
+gaps:
+- No API key issuance, no OAuth 2.0, no OpenID Connect and no mutual TLS is published anywhere.
+- No /.well-known/openid-configuration or /.well-known/oauth-authorization-server exists on any host.
+- 'The only credential that reaches register data is commercial: a broker licence or ELNO subscription.'

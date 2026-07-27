@@ -18,8 +18,15 @@ description: >-
   Its API posture is the sharpest example in this study of a registry that is
   technically modern and commercially closed. There is no developer portal, no
   developer or docs subdomain, no published API programme, no OpenAPI or Swagger
-  document, no SDK, no Postman workspace, no webhook catalogue and no GitHub
-  organization. Access to the register itself is gated behind a licence: the
+  document, no SDK, no Postman workspace and no GitHub organization. One
+  documented, anonymously callable API does exist, and it is not about land: the
+  NSW LRS status page is an Atlassian Statuspage with the public v2 API enabled
+  and referenced at status.nswlrs.com.au/api, publishing 27 components — among
+  them an "API Service" component under Information Broker Services that
+  confirms from the registry's own mouth that a production API estate sits
+  behind the broker licence — plus RSS and Atom incident feeds and webhook
+  notifications on incident and component changes. Access to the register itself
+  is gated behind a licence: the
   site states plainly that "Only an information broker we've authorised can
   access our records", and those brokers — InfoTrack, Dye & Durham, Equifax,
   CITEC Confirm, TriSearch, Landchecker, Fynd, PSI Global and others — "deliver
@@ -45,6 +52,9 @@ description: >-
   adoption. No open, unlicensed dataset is published — NSW LRS is not a
   publishing organization on data.nsw.gov.au — and a privatised registry selling
   the public record back through a licensed broker channel is itself the finding.
+  The registry does publish its language: a 257-term glossary of NSW land
+  titling definitions, harvested here as the controlled vocabulary that stands
+  in for the data dictionary it never wrote.
 accessModel:
   pricing: paid
   onboarding: contact-sales
@@ -59,7 +69,7 @@ accessModel:
   - terms-of-use
   generated: '2026-07-26'
   method: manual
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/groq.png
+image: https://nswlrs.com.au/assets/f/1129775276948026/1a96a055c4/new_nsw-lrs-logo_colour.png
 tags:
 - Real Estate
 - Australia
@@ -161,7 +171,94 @@ apis:
     url: https://nswlrs.com.au/services/record-searches/how-to-find-a-record
   - type: TermsOfService
     url: https://nswlrs.com.au/about-us/policies/terms-conditions
+  - type: Examples
+    url: examples/nsw-land-registry-hlrv-msearch-response.json
+- aid: nsw-land-registry:nsw-lrs-status-api
+  name: NSW LRS Status API
+  description: >-
+    The one documented, publicly callable API NSW Land Registry Services operates. The NSW LRS
+    status page at status.nswlrs.com.au is an Atlassian Statuspage (page id jcfp2nmyt2j4) with the
+    public v2 API enabled and a published endpoint reference at https://status.nswlrs.com.au/api,
+    which documents each route with plain curl examples and a JavaScript widget wrapper. Verified
+    anonymously on 2026-07-26: /api/v2/status.json returned HTTP 200 with indicator "none" and
+    description "All Systems Operational"; /api/v2/summary.json returned 12,844 bytes;
+    /api/v2/components.json returned 9,376 bytes describing 27 components and component groups;
+    /api/v2/incidents.json returned 163,325 bytes covering 50 incidents;
+    /api/v2/scheduled-maintenances.json returned 366,516 bytes; and the unresolved and upcoming
+    convenience routes both answered 200. Incident history is also published as RSS 2.0 and Atom
+    1.0 feeds, and the page offers email, SMS and webhook subscriptions, the webhook fired whenever
+    NSW LRS creates, updates or resolves an incident or changes a component status. The component
+    list doubles as the closest public inventory of NSW LRS production systems — Secure Web
+    Services, VPN, eConveyancing Services, NSW LRS Connect, Secure File Transfer, Information
+    Broker Services with its own "API Service" child component, ITS Services, Document Delivery
+    Services (DeX), RG Directions Website, Secure Upload Portal, DIIMS Services, Addressing
+    Services, eCommerce, Portal Access, Cadastral Records Enquiry, HLRV, NOS Enquiry and Street
+    Address searches. It confirms from the registry's own mouth that a production API service
+    exists behind the broker licence, even though nothing about that API is published. No
+    authentication, no key issuance and no rate limit is documented; the contract is Atlassian's,
+    not NSW LRS's.
+  humanURL: https://status.nswlrs.com.au/
+  baseURL: https://status.nswlrs.com.au/api/v2
+  tags:
+  - Status
+  - Operations
+  - Incidents
+  - Land Registry
+  - Australia
+  properties:
+  - type: APIReference
+    url: https://status.nswlrs.com.au/api
+  - type: Documentation
+    url: https://status.nswlrs.com.au/api
+  - type: StatusPage
+    url: https://status.nswlrs.com.au/
+  - type: Webhooks
+    url: asyncapi/nsw-land-registry-status-webhooks.yml
+  - type: Examples
+    url: examples/_index.yml
+  - type: RSS
+    url: https://status.nswlrs.com.au/history.rss
+  - type: Atom
+    url: https://status.nswlrs.com.au/history.atom
 common:
+- type: DomainSecurity
+  url: security/nsw-land-registry-domain-security.yml
+- type: Authentication
+  url: authentication/nsw-land-registry-authentication.yml
+- type: Conventions
+  url: conventions/nsw-land-registry-conventions.yml
+- type: Conformance
+  url: conformance/nsw-land-registry-conformance.yml
+- type: ErrorCatalog
+  url: errors/nsw-land-registry-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/nsw-land-registry-lifecycle.yml
+- type: ChangeLog
+  url: changelog/nsw-land-registry-changelog.yml
+- type: ChangeLog
+  url: https://nswlrs.com.au/about-us/education-hub/lrs-connect-release-schedule
+- type: Vocabulary
+  url: vocabulary/nsw-land-registry-glossary.yml
+- type: DataModel
+  url: data-model/nsw-land-registry-data-model.yml
+- type: Webhooks
+  url: asyncapi/nsw-land-registry-status-webhooks.yml
+- type: Examples
+  url: examples/_index.yml
+- type: LLMsTxt
+  url: llms/nsw-land-registry-llms.txt
+- type: Blog
+  url: https://nswlrs.com.au/about-us/announcements
+- type: Login
+  url: https://connect.nswlrs.com.au/
+- type: Documentation
+  url: https://nswlrs.com.au/glossary-of-terms
+- type: Documentation
+  url: https://nswlrs.com.au/current-processing-times
+- type: Documentation
+  url: https://nswlrs.com.au/forms-guides/guides
+- type: Documentation
+  url: https://nswlrs.com.au/about-us/education-hub
 - type: Website
   url: https://nswlrs.com.au/
 - type: Documentation

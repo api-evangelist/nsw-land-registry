@@ -1,0 +1,94 @@
+generated: '2026-07-26'
+method: searched
+source: >-
+  https://nswlrs.com.au/services/plans/digital-plans,
+  https://nswlrs.com.au/about-us/education-hub/lrs-connect-release-schedule,
+  https://nswlrs.com.au/current-processing-times, https://status.nswlrs.com.au/ and live probes
+description: >-
+  How NSW Land Registry Services versions, changes and reports on the systems behind the NSW
+  Torrens Title Register. There is no API lifecycle policy because there is no public API
+  programme; what exists instead is a regulated lodgment lifecycle with mandated cutover dates, a
+  product release schedule for LRS Connect, and a genuinely good status page with a public API.
+versioning:
+  scheme: uri-path per surface, inherited from the underlying product
+  current:
+  - surface: NSW LRS status page API
+    version: v2
+    path: /api/v2
+  - surface: HLRV IIIF Image API
+    version: '2'
+    path: /hlrv/iiif/2
+  - surface: ICSM ePlan Cadastral Information File enumerated types
+    version: '4.0'
+    namespace: urn:xml-gov-au:nsw:icsm:eplan:cif:enumerated-types:4.0
+  - surface: NSW Participation Rules (ECNL)
+    version: '7'
+  docs: null
+  policy_url: null
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: >-
+    NSW LRS publishes no deprecation policy and no Sunset or Deprecation header was observed on any
+    surface. Change is announced as a regulated mandate with a commencement date rather than as an
+    API deprecation.
+mandates:
+- date: '2025-07-01'
+  change: 100% of plans must be lodged online through LRS Connect
+  source: >-
+    https://nswlrs.com.au/about-us/announcements/changes-to-lodgment-rules-require-100-online-plan-lodgment-from-1-july-2025
+- date: '2026-07-01'
+  change: >-
+    Digital Forms mandate in effect; from this date Deposited and Community plans must include a
+    LandXML digital plan file validated against the ICSM ePlan CIF schema
+  source: https://nswlrs.com.au/about-us/announcements/the-digital-forms-mandate-is-now-in-effect
+- date: '2025-11-10'
+  change: eConveyancing technical upgrade to electronic dealing forms
+  source: >-
+    https://nswlrs.com.au/about-us/announcements/upgrades-to-electronic-dealing-forms-coming-10-november-2025
+sla:
+  url: null
+  uptime_target: null
+  operational_transparency:
+    processing_times: https://nswlrs.com.au/current-processing-times
+    detail: >-
+      NSW LRS publishes a dated processing-times page — the lodgment dates currently being examined
+      for electronic and referred dealings, the registration dates whose document images are being
+      loaded, and the oldest unallocated Deposited, Strata and Community plan. On 2026-07-26 it
+      reported electronic dealings lodged 22 July 2026, referred dealings lodged 1 July 2026,
+      dealing images registered 20 July 2026 and plan images registered 24 July 2026. This is the
+      registry's real service-level signal, published in place of an SLA.
+status_page: https://status.nswlrs.com.au/
+status_api:
+  url: https://status.nswlrs.com.au/api/v2
+  docs: https://status.nswlrs.com.au/api
+  page_id: jcfp2nmyt2j4
+  components_reported: 27
+  incident_history_feeds:
+  - https://status.nswlrs.com.au/history.rss
+  - https://status.nswlrs.com.au/history.atom
+  subscriptions:
+  - email
+  - sms
+  - webhook
+  detail: >-
+    The status page is Atlassian Statuspage with the public v2 API enabled and documented. It
+    reports on Secure Web Services, VPN, eConveyancing Services, NSW LRS Connect, Secure File
+    Transfer, Information Broker Services (including an "API Service" component), ITS Services,
+    Document Delivery Services (DeX), RG Directions Website, Secure Upload Portal, DIIMS Services,
+    Addressing Services, eCommerce, Portal Access, Cadastral Records Enquiry, HLRV, NOS Enquiry and
+    Street Address searches. Fifty incidents were in the public history on 2026-07-26.
+release_schedule:
+  url: https://nswlrs.com.au/about-us/education-hub/lrs-connect-release-schedule
+  detail: >-
+    Dated LRS Connect release notes, published as accordions of per-item change rows (component,
+    change type, description). Captured in changelog/nsw-land-registry-changelog.yml.
+deprecated_operations: []
+notes:
+- >-
+  The two undocumented public surfaces (the HLRV IIIF endpoint and the document search proxy) carry
+  no versioning commitment of any kind and could change or close without notice; they are backends
+  of a free public viewer, not products.
+- >-
+  Register access itself is licensed, so the practical lifecycle risk for an integrator is
+  contractual (broker licence terms, HLRV terms of use) rather than technical.
