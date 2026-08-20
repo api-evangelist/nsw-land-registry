@@ -71,6 +71,18 @@ accessModel:
   method: manual
 image: https://nswlrs.com.au/assets/f/1129775276948026/1a96a055c4/new_nsw-lrs-logo_colour.png
 tags:
+- Real-Estate
+- Australia
+- Land Registry
+- Title
+- Conveyancing
+- Property Records
+- Torrens Title
+- eConveyancing
+- Government
+- Geospatial
+- PropTech
+tags_raw:
 - Real Estate
 - Australia
 - Land Registry
@@ -114,6 +126,12 @@ apis:
   humanURL: https://hlrv.nswlrs.com.au/
   baseURL: https://api.lrsnative.com.au/hlrv/iiif/2
   tags:
+  - Land Registry
+  - Historical Records
+  - IIIF
+  - Image
+  - Australia
+  tags_raw:
   - Land Registry
   - Historical Records
   - IIIF
@@ -200,6 +218,11 @@ apis:
   humanURL: https://status.nswlrs.com.au/
   baseURL: https://status.nswlrs.com.au/api/v2
   tags:
+  - Status
+  - Incidents
+  - Land Registry
+  - Australia
+  tags_raw:
   - Status
   - Operations
   - Incidents
