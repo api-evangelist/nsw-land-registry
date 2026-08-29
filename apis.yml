@@ -55,6 +55,17 @@ description: >-
   The registry does publish its language: a 257-term glossary of NSW land
   titling definitions, harvested here as the controlled vocabulary that stands
   in for the data dictionary it never wrote.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: contact-sales
