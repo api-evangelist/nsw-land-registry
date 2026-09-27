@@ -82,7 +82,7 @@ accessModel:
   method: manual
 image: https://nswlrs.com.au/assets/f/1129775276948026/1a96a055c4/new_nsw-lrs-logo_colour.png
 tags:
-- Real-Estate
+- Real Estate
 - Australia
 - Land Registry
 - Title
@@ -105,6 +105,7 @@ tags_raw:
 - Government
 - Geospatial
 - PropTech
+- Real-Estate
 created: '2026-07-26'
 modified: '2026-07-26'
 specificationVersion: '0.23'
